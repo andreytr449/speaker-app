@@ -33,6 +33,14 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/SF_Pro_Display_Medium.otf"
+          ]
+        }
       ]
     ],
     "experiments": {
