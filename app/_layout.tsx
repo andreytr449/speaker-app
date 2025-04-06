@@ -1,34 +1,43 @@
 import "../global.css"
-import { useFonts } from 'expo-font';
+import {useFonts} from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { Stack } from "expo-router";
-import {useEffect} from "react";
+import {Stack} from "expo-router";
+import {useEffect, useState} from "react";
+import {useColorScheme} from "react-native";
+import useTheme from "@/store/theme";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
-    'SF_Pro_Display_Bold': require('../assets/fonts/SF_Pro_Display_Bold.otf'),
-    'SF_Pro_Display_Heavy_Italic': require('../assets/fonts/SF_Pro_Display_Heavy_Italic.otf'),
-    'SF_Pro_Display_Light_Italic': require('../assets/fonts/SF_Pro_Display_Light_Italic.otf'),
-    'SF_Pro_Display_Medium': require('../assets/fonts/SF_Pro_Display_Medium.otf'),
-    'SF_Pro_Display_Regula': require('../assets/fonts/SF_Pro_Display_Regula.otf'),
-    'SF_Pro_Display_Semibold_Italic': require('../assets/fonts/SF_Pro_Display_Semibold_Italic.otf'),
-    'SF_Pro_Display_Thin_Italic': require('../assets/fonts/SF_Pro_Display_Thin_Italic.otf'),
-    'SF_Pro_Display_Ultralight_Italic': require('../assets/fonts/SF_Pro_Display_Ultralight_Italic.otf'),
-    'SF_Pro_Italic': require('../assets/fonts/SF_Pro_Italic.otf'),
-  });
+    const [fontsLoaded] = useFonts({
+        'SF_Pro_Display_Bold': require('../assets/fonts/SF_Pro_Display_Bold.otf'),
+        'SF_Pro_Display_Heavy_Italic': require('../assets/fonts/SF_Pro_Display_Heavy_Italic.otf'),
+        'SF_Pro_Display_Light_Italic': require('../assets/fonts/SF_Pro_Display_Light_Italic.otf'),
+        'SF_Pro_Display_Medium': require('../assets/fonts/SF_Pro_Display_Medium.otf'),
+        'SF_Pro_Display_Regula': require('../assets/fonts/SF_Pro_Display_Regula.otf'),
+        'SF_Pro_Display_Semibold_Italic': require('../assets/fonts/SF_Pro_Display_Semibold_Italic.otf'),
+        'SF_Pro_Display_Thin_Italic': require('../assets/fonts/SF_Pro_Display_Thin_Italic.otf'),
+        'SF_Pro_Display_Ultralight_Italic': require('../assets/fonts/SF_Pro_Display_Ultralight_Italic.otf'),
+        'SF_Pro_Italic': require('../assets/fonts/SF_Pro_Italic.otf'),
+    });
 
-  useEffect(() => {
-    if (loaded || error) {
-      SplashScreen.hideAsync();
+    const colorScheme = useColorScheme();
+    const {toggleTheme} = useTheme();
+
+    useEffect(() => {
+        const systemTheme = colorScheme === 'dark' ? 'dark' : 'light';
+        toggleTheme(systemTheme);
+    }, [colorScheme]);
+
+    useEffect(() => {
+        if (fontsLoaded) {
+            SplashScreen.hideAsync();
+        }
+    }, [fontsLoaded]);
+
+    if (!fontsLoaded) {
+        return null;
     }
-  }, [loaded, error]);
 
-  if (!loaded && !error) {
-    return null;
-  }
-
-
-  return <Stack />;
+    return <Stack screenOptions={{headerShown: false}}/>;
 }
