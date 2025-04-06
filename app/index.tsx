@@ -1,13 +1,12 @@
-import { Text, View } from "react-native";
-import { Appearance, useColorScheme } from 'react-native';
-
+import {useState} from "react";
+import {Redirect} from "expo-router";
 export default function Index() {
-    let colorScheme = useColorScheme();
+    const [isAuthUser, setIsAuthUser] = useState(false)
 
+    if (!isAuthUser)
+        return <Redirect href='/onboarding/welcome' />
 
     return (
-    <View>
-      <Text  className='text-body-large color-neutral-950 font-bold'>Typography - SF Pro Text</Text>
-    </View>
-  );
+        <></>
+    );
 }
