@@ -10,8 +10,9 @@ import {
 import useTheme from "@/store/theme";
 import Button from "@/components/ui/button";
 import {router} from "expo-router";
-import useChangeTheme from '@/hooks/useChangeTheme';
 import ChangeThemeButton from "@/components/share/change-theme-button";
+import {LogoTextDarkOnBoard, LogoTextLightOnBoard} from "@/assets/images/logo/logo";
+import {HelloImgDark, HelloImgLight} from "@/assets/images/onboarding/hello_img";
 
 const WelcomeScreen = () => {
     const {height, width} = useWindowDimensions()
@@ -29,25 +30,15 @@ const WelcomeScreen = () => {
                 <View className='items-center relative w-full'>
                     <View className='absolute z-10 -top-8'>
                         {isDarkMode ?
-                            <Image resizeMode='contain'
-                                   source={require('@/assets/images/logo/Logo 48_48_dark.png')}/>
+                            <LogoTextLightOnBoard />
                             :
-                            <Image resizeMode='contain'
-                                   source={require('@/assets/images/logo/Logo 48_48_light.png')}/>
+                            <LogoTextDarkOnBoard />
                         }
                     </View>
                     {isDarkMode ?
-                        <Image
-                            resizeMode="cover"
-                            style={{width: '100%', height: height * 0.5}}
-                            source={require('@/assets/images/onboarding/hello_Illustraton_dark.png')}
-                        />
+                        <HelloImgDark />
                         :
-                        <Image
-                            resizeMode="cover"
-                            style={{width: '100%', height: height * 0.5}}
-                            source={require('@/assets/images/onboarding/Hello_Illustraton.png')}
-                        />
+                        <HelloImgLight />
                     }
                 </View>
                 <View className='mt-5 max-w-80'>
