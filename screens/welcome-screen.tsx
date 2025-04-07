@@ -43,7 +43,7 @@ const WelcomeScreen = () => {
                 </View>
                 <View className='mt-5 max-w-80'>
                     <Text
-                        className={` text-headline-medium ${isDarkMode ? 'text-body-primary-dark' : 'text-body-primary-light '}`}
+                        className={`text-headline-medium ${isDarkMode ? 'text-body-primary-dark' : 'text-body-primary-light '}`}
                         style={{textAlign: 'center'}}>
                         Learn a language in 3 minutes a day
                     </Text>
@@ -52,7 +52,6 @@ const WelcomeScreen = () => {
                     <Button onPress={() => router.push('/auth/sign-up')}>Start learning</Button>
                 </View>
                 <View className='flex flex-row gap-2 items-center justify-center'>
-
                     <Text
                         className={`text-body-medium mt-3 gap-3 font-light ${isDarkMode ? 'text-body-primary-dark' : 'text-body-primary-light '}`}>Already,
                         have an account?

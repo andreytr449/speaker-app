@@ -8,7 +8,6 @@ type useThemeType = {
 const useTheme = create<useThemeType>((set) => ({
     isDarkMode: false,
     toggleTheme: (theme) => {
-        console.log('Toggling to theme:', theme);
         if (theme === 'dark') {
             set({isDarkMode: true});
         } else {
