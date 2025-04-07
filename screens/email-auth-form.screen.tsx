@@ -12,6 +12,14 @@ import {router} from "expo-router";
 const EmailAuthFormScreen = ({isLogin}: { isLogin: boolean }) => {
     const {isDarkMode} = useTheme()
 
+    const handlePress = () => {
+        if (isLogin) {
+            return
+        } else {
+            router.push('/auth/create-username')
+        }
+    }
+
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View
@@ -27,7 +35,7 @@ const EmailAuthFormScreen = ({isLogin}: { isLogin: boolean }) => {
                     <Input label='Email' placeholder='user@gmail.com'/>
                 </View>
                 <View className='w-full px-1 py-2'>
-                    <Button>Continue</Button>
+                    <Button onPress={handlePress}>Continue</Button>
                 </View>
 
                 <View className='flex-row w-full items-center px-5'>

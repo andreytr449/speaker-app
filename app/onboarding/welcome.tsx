@@ -1,5 +1,5 @@
 import React from 'react';
-import WelcomeScreen from "@/screens/welcome-screen";
+import WelcomeScreen from "@/screens/welcome.screen";
 
 const Welcome = () => {
     return (
