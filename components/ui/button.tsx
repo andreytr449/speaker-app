@@ -12,7 +12,7 @@ const Button = ({ children, className, textClassName, ...rest }: ButtonProps) =>
     return (
         <Pressable
             {...rest}
-            className="bg-primary mx-4 justify-center items-center py-3 rounded-[12px] pressed:opacity-80"
+            className={`${className} bg-primary mx-4 justify-center items-center py-3 rounded-[12px] pressed:opacity-80`}
         >
             <Text className={`text-title-large text-body-primary-dark ${textClassName ?? ''}`}>
                 {children}

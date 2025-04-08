@@ -5,6 +5,8 @@ export default function Index() {
 
     if (!isAuthUser)
         return <Redirect href='/onboarding/welcome' />
+    if(isAuthUser)
+        return <Redirect href='/auth/select-language' />
 
     return (
         <></>

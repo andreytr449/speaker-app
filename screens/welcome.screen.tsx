@@ -41,7 +41,7 @@ const WelcomeScreen = () => {
                         <HelloImgLight />
                     }
                 </View>
-                <View className='mt-5 max-w-80'>
+                <View className='mt-5 max-w-[270px]'>
                     <Text
                         className={`text-headline-medium ${isDarkMode ? 'text-body-primary-dark' : 'text-body-primary-light '}`}
                         style={{textAlign: 'center'}}>

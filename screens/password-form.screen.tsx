@@ -4,10 +4,20 @@ import Input from "@/components/ui/input";
 import Button from "@/components/ui/button";
 import useTheme from "@/store/theme";
 import useAuthStore from "@/store/auth";
+import {router} from "expo-router";
+import useUserStore from "@/store/user";
 
 const PasswordFormScreen = () => {
     const {isDarkMode} = useTheme()
     const {isLogin} = useAuthStore()
+    const {seIsLogged} =    useUserStore()
+    const handlePress = async () => {
+        if(!isLogin) {
+            seIsLogged(true)
+            router.replace('/auth/select-language')
+        }
+    }
+
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View
@@ -34,7 +44,7 @@ const PasswordFormScreen = () => {
                 </View>
 
                 <View className='w-full px-1 py-2'>
-                    <Button>Continue</Button>
+                    <Button onPress={handlePress}>Continue</Button>
                 </View>
 
             </View>
