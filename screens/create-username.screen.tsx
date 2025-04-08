@@ -3,6 +3,7 @@ import {Keyboard, Text, TouchableWithoutFeedback, View} from "react-native";
 import useTheme from "@/store/theme";
 import Input from "@/components/ui/input";
 import Button from "@/components/ui/button";
+import {router} from "expo-router";
 
 const CreateUsernameScreen = () => {
     const {isDarkMode} = useTheme()
@@ -26,7 +27,7 @@ const CreateUsernameScreen = () => {
                 </View>
 
                 <View className='w-full px-1 py-2'>
-                    <Button>Continue</Button>
+                    <Button onPress={() => router.push({pathname: '/auth/password-from', params: {}})}>Continue</Button>
                 </View>
 
             </View>

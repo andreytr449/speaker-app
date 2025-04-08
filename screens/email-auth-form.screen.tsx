@@ -7,10 +7,15 @@ import {Keyboard, TouchableWithoutFeedback} from 'react-native';
 import Button from "@/components/ui/button";
 import AuthButton from "@/components/ui/auth-button";
 import {GoogleDark, GoogleLight} from "@/assets/icons/icons";
-import {router} from "expo-router";
+import {Redirect, router} from "expo-router";
+import useAuthStore from "@/store/auth";
 
-const EmailAuthFormScreen = ({isLogin}: { isLogin: boolean }) => {
+const EmailAuthFormScreen = () => {
     const {isDarkMode} = useTheme()
+    const {isLogin} = useAuthStore()
+
+    if(isLogin === undefined)
+        return <Redirect href='/onboarding/welcome' />
 
     const handlePress = () => {
         if (isLogin) {
