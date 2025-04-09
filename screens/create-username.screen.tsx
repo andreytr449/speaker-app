@@ -4,6 +4,7 @@ import useTheme from "@/store/theme";
 import Input from "@/components/ui/input";
 import Button from "@/components/ui/button";
 import {router} from "expo-router";
+import OnBoardingTitle from "@/components/share/on-boarding-title";
 
 const CreateUsernameScreen = () => {
     const {isDarkMode} = useTheme()
@@ -13,10 +14,7 @@ const CreateUsernameScreen = () => {
             <View
                 className={`flex-1 ${isDarkMode ? 'bg-bg-dark' : 'bg-bg-light'} justify-between`}>
                 <View className='px-5 w-full'>
-                    <Text
-                        className={`mt-3 text-title-large ${isDarkMode ? 'text-body-primary-dark' : 'text-body-primary-light'}`}>
-                        Create your User Name
-                    </Text>
+                   <OnBoardingTitle>Create your User Name</OnBoardingTitle>
                     <Input label='User Name' placeholder='username001'/>
                     <View className='max-w-[80%]'>
                     <Text

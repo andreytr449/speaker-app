@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {BackHandler, FlatList, Text, View} from "react-native";
+import {BackHandler, FlatList, View} from "react-native";
 import useTheme from "@/store/theme";
 import Button from "@/components/ui/button";
 import {availableLanguages} from "@/constans";
 import LanguageCard from "@/components/share/language-card";
+import OnBoardingTitle from "@/components/share/on-boarding-title";
+import {router} from "expo-router";
 
 const SelectLanguageScreen = () => {
     const {isDarkMode} = useTheme()
@@ -29,18 +31,15 @@ const SelectLanguageScreen = () => {
     }
 
     const handleConfirmPress = () => {
-        // TODO: navigate to 'learning goal' screen
+        router.navigate('/auth/language-level')
     }
 
     return (
         <View
             className={`flex-1 ${isDarkMode ? 'bg-bg-dark' : 'bg-bg-light'} justify-between`}
         >
-            <View className='px-5 w-full'>
-                <Text
-                    className={`mt-3 text-title-large ${isDarkMode ? 'text-body-primary-dark' : 'text-body-primary-light'}`}>
-                    Choose the language you want to learn
-                </Text>
+            <View className='px-5 w-full flex-1 gap-2'>
+                <OnBoardingTitle>Choose the language you want to learn</OnBoardingTitle>
                 <FlatList data={availableLanguages}
                           renderItem={({item}) => <LanguageCard
                               onPress={() => handlePress(item.name)}

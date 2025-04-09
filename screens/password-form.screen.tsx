@@ -6,6 +6,7 @@ import useTheme from "@/store/theme";
 import useAuthStore from "@/store/auth";
 import {router} from "expo-router";
 import useUserStore from "@/store/user";
+import OnBoardingTitle from "@/components/share/on-boarding-title";
 
 const PasswordFormScreen = () => {
     const {isDarkMode} = useTheme()
@@ -23,15 +24,12 @@ const PasswordFormScreen = () => {
             <View
                 className={`flex-1 ${isDarkMode ? 'bg-bg-dark' : 'bg-bg-light'} justify-between`}>
                 <View className='px-5 w-full'>
-                    <Text
-                        className={`mt-3 text-title-large ${isDarkMode ? 'text-body-primary-dark' : 'text-body-primary-light'}`}>
-                        {
-                            isLogin ?
-                                'Enter your password'
-                                :
-                                'Create password'
-                        }
-                    </Text>
+                   <OnBoardingTitle> {
+                       isLogin ?
+                           'Enter your password'
+                           :
+                           'Create password'
+                   }</OnBoardingTitle>
                     <Input secureTextEntry={true} label='Password' placeholder='Ebter your password'/>
                     <View className=''>
                         {!isLogin &&
