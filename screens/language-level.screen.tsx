@@ -12,15 +12,13 @@ import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
 import {dummyLanguagesLevel} from "@/constans";
 import LanguageLevelCard from "@/components/share/language-level-card";
 import * as WebBrowser from 'expo-web-browser';
+import {router} from "expo-router";
 
 const LanguageLevelScreen = () => {
     const {isDarkMode} = useTheme();
     const bottomSheetRef = useRef<BottomSheet>(null);
     const [selectedLanguageLevel, setSelectedLanguageLevel] = useState<string | null>(null);
-
-
     const snapPoints = useMemo(() => ['60%'], []);
-
     const handleSheetChanges = useCallback((index: number) => {
         console.log('handleSheetChanges', index);
     }, []);
@@ -39,8 +37,12 @@ const LanguageLevelScreen = () => {
 
     const _handlePressButtonAsync = async () => {
         await WebBrowser.openBrowserAsync('https://expo.dev');
+    }
 
-    };
+    const handlePress = () => {
+        if(selectedLanguageLevel)
+            router.push('/auth/select-daily-time')
+    }
 
     return (
         <GestureHandlerRootView className='flex-1'>
@@ -120,6 +122,7 @@ const LanguageLevelScreen = () => {
                     </View>
 
                     <Button
+                        onPress={handlePress}
                         className={selectedLanguageLevel ? '' : `${isDarkMode ? 'bg-body-secondary-dark' : 'bg-body-secondary-light'}`}
                         textClassName={selectedLanguageLevel ? '' : `${isDarkMode ? 'text-border-dark' : 'text-border-light'}`}
                     >
