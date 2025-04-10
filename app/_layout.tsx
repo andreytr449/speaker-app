@@ -3,8 +3,9 @@ import {useFonts} from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import {Stack} from "expo-router";
 import {useEffect, useState} from "react";
-import {useColorScheme} from "react-native";
+import {StatusBar, useColorScheme} from "react-native";
 import useTheme from "@/store/theme";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -22,11 +23,24 @@ export default function RootLayout() {
     });
 
     const colorScheme = useColorScheme();
-    const {toggleTheme} = useTheme();
+    const {toggleTheme, isDarkMode} = useTheme();
 
     useEffect(() => {
-        const systemTheme = colorScheme === 'dark' ? 'dark' : 'light';
-        toggleTheme(systemTheme);
+        async function prepare() {
+            const userTheme = await AsyncStorage.getItem('appTheme');
+            if (!userTheme) {
+                console.log('NO USER THEME :(')
+                const theme = colorScheme === 'dark' ? 'dark' : 'light'
+                await AsyncStorage.setItem('appTheme', theme);
+                toggleTheme(theme);
+            } else {
+                console.log('YES USER THEME :)')
+                toggleTheme(userTheme as 'dark' | 'light');
+            }
+        }
+
+        prepare()
+
     }, [colorScheme]);
 
     useEffect(() => {
@@ -39,5 +53,10 @@ export default function RootLayout() {
         return null;
     }
 
-    return <Stack screenOptions={{headerShown: false}}/>;
+    return (
+        <>
+            <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'}/>
+            <Stack screenOptions={{headerShown: false}}/>;
+        </>
+    )
 }
