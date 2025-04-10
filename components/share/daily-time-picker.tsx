@@ -23,7 +23,7 @@ export default function DailyTimePicker({DATA, setActiveIndex}: {DATA: number[],
     const FULL_ITEM_WIDTH = ITEM_WIDTH + SPACING;
     const leftPadding = (SCREEN_WIDTH - FULL_ITEM_WIDTH) / 2;
 
-    const renderItem = ({item, index}) => {
+    const renderItem = ({item, index}:{item:number, index:number}) => {
         const inputRange = [
             (index - 2) * FULL_ITEM_WIDTH,
             (index - 1) * FULL_ITEM_WIDTH,

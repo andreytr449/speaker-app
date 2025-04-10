@@ -27,7 +27,7 @@ const SelectDailyTimeScreen = () => {
                 <DailyTimePicker DATA={minutesVariants} setActiveIndex={setActiveIndex}/>
             </View>
             <View style={{marginBottom: 15}}>
-                <Button>Continue ({minutesVariants[activeIndex]} min/day)</Button>
+                <Button>Continue (<Text className='font-semibold'>{minutesVariants[activeIndex]}</Text> min/day)</Button>
             </View>
         </View>
     );
