@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Pressable} from "react-native";
+import {Pressable} from "react-native";
 import useTheme from "@/store/theme";
 import useChangeTheme from "@/hooks/useChangeTheme";
 import {Moon, Sun} from "@/assets/icons/icons";

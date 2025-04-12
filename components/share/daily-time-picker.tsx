@@ -109,7 +109,7 @@ export default function DailyTimePicker({DATA, setActiveIndex}: {DATA: number[],
                     console.log('Centered element:', DATA[index]);
                 }}
             />
-            <View className='justify-center items-center pr-16'>
+            <View className='justify-center items-center'>
                 <Text style={{fontSize: 20, paddingLeft: 20}}
                       className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} font-semibold text-label-small`}>min/day</Text>
             </View>

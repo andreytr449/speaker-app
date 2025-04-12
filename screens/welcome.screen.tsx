@@ -1,10 +1,8 @@
 import React from 'react';
 import {
-    Image,
     Pressable,
     SafeAreaView,
     Text,
-    useWindowDimensions,
     View
 } from "react-native";
 import useTheme from "@/store/theme";
@@ -15,7 +13,6 @@ import {LogoTextDarkOnBoard, LogoTextLightOnBoard} from "@/assets/images/logo/lo
 import {HelloImgDark, HelloImgLight} from "@/assets/images/onboarding/hello_img";
 
 const WelcomeScreen = () => {
-    const {height, width} = useWindowDimensions()
     const {isDarkMode} = useTheme()
 
     return (
