@@ -17,9 +17,9 @@ const UserProgress = () => {
 
             <View
                 style={{ left: `${progress - 8}%`, top: '-25%' }}
-                className="bg-primary absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-6 w-auto px-2 rounded-[12px] justify-center items-center"
+                className="bg-primary absolute h-6 w-auto px-2 rounded-[12px] justify-center items-center"
             >
-                <Text className="text-bg-light text-xs">{progress}%</Text>
+                <Text className="text-bg-light">{progress}%</Text>
             </View>
         </View>
     );

@@ -12,13 +12,13 @@ const BookHeader = () => {
             <View className='rounded-full overflow-hidden w-[50px] h-[50px]'>
                 <UKFlagRounded/>
             </View>
-            <View className='flex-row gap-5 w-auto'>
-                <View className='flex-row gap-2'>
+            <View className='flex-row gap-5 w-auto items-center'>
+                <View className='flex-row gap-2 items-center'>
                     <FireIcon isDark={isDarkMode}/>
                     <Text
                         className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-body-large`}>0</Text>
                 </View>
-                <View className='flex-row gap-2'>
+                <View className='flex-row gap-2 items-center'>
                     <StarIcon isDark={isDarkMode}/>
                     <Text
                         className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-body-large`}>0
