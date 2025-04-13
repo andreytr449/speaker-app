@@ -56,7 +56,9 @@ export default function RootLayout() {
     return (
         <>
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'}/>
-            <Stack screenOptions={{headerShown: false}}/>;
+            <Stack screenOptions={{headerShown: false}}>
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            </Stack>
         </>
     )
 }
