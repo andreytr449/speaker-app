@@ -1053,3 +1053,23 @@ export const MarkIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => 
         </Svg>
     )
 }
+
+export const LockIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+    return (
+        <Svg
+            width={18}
+            height={20}
+            viewBox="0 0 18 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M4 5a5 5 0 0110 0v3h1a3 3 0 013 3v6a3 3 0 01-3 3H3a3 3 0 01-3-3v-6a3 3 0 013-3h1V5zm2 3h6V5a3 3 0 10-6 0v3zm-3 2a1 1 0 00-1 1v6a1 1 0 001 1h12a1 1 0 001-1v-6a1 1 0 00-1-1H3zm6 2a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1z"
+                fill={isDark ? '#fff' : "#131313"}
+            />
+        </Svg>
+    )
+}

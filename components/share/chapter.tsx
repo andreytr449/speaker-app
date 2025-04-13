@@ -5,9 +5,10 @@ import {chapterDummyData} from "@/constans";
 import ChapterCard from "@/components/share/chapter-card";
 import ChapterTestCard from "@/components/share/chapter-test-card";
 
-const Chapter = ({chapterTitle, chapterName}: {
+const Chapter = ({chapterTitle, chapterName, isLock}: {
     chapterTitle: string,
-    chapterName: string
+    chapterName: string,
+    isLock?: boolean
 }) => {
     const {isDarkMode} = useTheme()
     return (
@@ -15,19 +16,27 @@ const Chapter = ({chapterTitle, chapterName}: {
             <View className='flex-row justify-between items-center'>
                 <Text
                     className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-title-medium`}>{chapterTitle}</Text>
-                <View className={`${isDarkMode ? 'bg-surfaces-light-1' : 'bg-surfaces-dark-1'} w-6 h-[2px]`}/>
+                <View
+                    className={`${isDarkMode ? 'bg-surfaces-light-1' : 'bg-surfaces-dark-1'} w-6 h-[2px]`}/>
                 <Text className='text-primary text-title-medium'>{chapterName}</Text>
             </View>
             <View className='flex-row justify-between items-center'>
                 <Text
-                    className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-body-medium`}>Lessons completed</Text>
+                    className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-body-medium`}>Lessons
+                    completed</Text>
                 <Text className='text-primary text-body-medium'>0/5</Text>
             </View>
 
             {chapterDummyData.map((item, index) => (
-                <ChapterCard key={index + chapterTitle} title={item.title} imgUri={item.imgUri} isActive={index === 0} isLast={index === chapterDummyData.length - 1} />
+                <ChapterCard key={index + chapterTitle} title={item.title}
+                             imgUri={item.imgUri} isLock={isLock}
+                             isActive={isLock ? index === 0 : index === 1}
+                             isLast={index === chapterDummyData.length - 1}/>
             ))}
-            <ChapterTestCard title='Test work' description='Test your skills to unlock the next chapter' />
+            <ChapterTestCard title='Test work'
+                             description='Test your skills to unlock the next chapter'
+                             isLock={isLock}
+            />
         </View>
     );
 };

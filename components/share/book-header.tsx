@@ -8,7 +8,7 @@ const BookHeader = () => {
     const {isDarkMode} = useTheme()
 
     return (
-        <View className='flex-row justify-between items-center'>
+        <View className='flex-row justify-between items-center mr-3'>
             <View className='rounded-full overflow-hidden w-[50px] h-[50px]'>
                 <UKFlagRounded/>
             </View>

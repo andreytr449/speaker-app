@@ -24,7 +24,7 @@ const BookScreen = () => {
                 <UserProgress/>
 
                 <Chapter chapterTitle='Chapter - 1' chapterName='Traveling' />
-                <Chapter chapterTitle='Chapter - 2' chapterName='Friendship' />
+                <Chapter chapterTitle='Chapter - 2' chapterName='Friendship' isLock={true} />
 
             </ScrollView>
         </SafeAreaView>
