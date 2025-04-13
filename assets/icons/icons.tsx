@@ -1073,3 +1073,58 @@ export const LockIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => 
         </Svg>
     )
 }
+
+export function DiscountIcon({fill, ...props}:{fill?: string, props?: any}) {
+    return (
+        <Svg
+            width={20}
+            height={20}
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path
+                d="M2.795 5.056a2.262 2.262 0 012.26-2.262h1.03c.597 0 1.169-.237 1.593-.657l.719-.72a2.262 2.262 0 013.199-.009v.001l.01.008.72.72a2.26 2.26 0 001.593.657h1.028a2.262 2.262 0 012.262 2.262v1.027c0 .597.236 1.17.657 1.594l.72.72c.886.881.89 2.313.01 3.2h-.001l-.01.01-.72.72a2.256 2.256 0 00-.656 1.591v1.03a2.26 2.26 0 01-2.261 2.26h-1.031a2.26 2.26 0 00-1.593.658l-.72.72a2.261 2.261 0 01-3.197.011l-.003-.003-.01-.009-.718-.719a2.263 2.263 0 00-1.593-.658H5.056a2.26 2.26 0 01-2.261-2.26v-1.032c0-.597-.237-1.169-.658-1.592l-.72-.72a2.26 2.26 0 01-.01-3.197s0-.002.002-.003l.009-.009.719-.72c.42-.424.658-.996.658-1.594V5.056M7.432 12.572l5.14-5.14"
+                stroke={fill ? fill : "#007AFF"}
+                strokeWidth={1.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <Path
+                d="M12.495 12.5h.01M7.495 7.5h.01"
+                stroke={fill ? fill : "#007AFF"}
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </Svg>
+    )
+}
+
+
+export function SuccessIcon({fill, ...props}:{fill?: string, props?: any}) {
+    return (
+        <Svg
+            width={25}
+            height={24}
+            viewBox="0 0 25 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M12.5 3a9 9 0 100 18 9 9 0 000-18zm-11 9c0-6.075 4.925-11 11-11s11 4.925 11 11-4.925 11-11 11-11-4.925-11-11z"
+                fill={fill ? fill : "#fff"}
+            />
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M16.767 8.92a1 1 0 010 1.414l-4.746 4.746a1 1 0 01-1.414 0l-2.374-2.373a1 1 0 111.414-1.414l1.667 1.666 4.039-4.04a1 1 0 011.414 0z"
+                fill={fill ? fill : "#fff"}
+            />
+        </Svg>
+    )
+}

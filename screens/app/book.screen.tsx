@@ -4,8 +4,9 @@ import {Pressable, SafeAreaView, ScrollView, Text, View} from "react-native";
 import BookHeader from "@/components/share/book-header";
 import OnBoardingTitle from "@/components/share/on-boarding-title";
 import UserProgress from "@/components/share/user-progress";
-import {MarkIcon} from "@/assets/icons/icons";
+import {DiscountIcon, MarkIcon, SuccessIcon} from "@/assets/icons/icons";
 import Chapter from "@/components/share/chapter";
+import OffersButton from "@/components/share/offers-button";
 
 const BookScreen = () => {
     const {isDarkMode} = useTheme()
@@ -22,9 +23,16 @@ const BookScreen = () => {
                     </Pressable>
                 </View>
                 <UserProgress/>
+                <View className='my-4' />
+                    <OffersButton buttonTitle='7 days - Free'
+                                  title='Try Premium For Free'
+                                  bgIcon={<DiscountIcon/>}
+                    />
 
-                <Chapter chapterTitle='Chapter - 1' chapterName='Traveling' />
-                <Chapter chapterTitle='Chapter - 2' chapterName='Friendship' isLock={true} />
+
+                <Chapter chapterTitle='Chapter - 1' chapterName='Traveling'/>
+                <Chapter chapterTitle='Chapter - 2' chapterName='Friendship'
+                         isLock={true}/>
 
             </ScrollView>
         </SafeAreaView>
