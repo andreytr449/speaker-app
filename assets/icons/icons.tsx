@@ -1128,3 +1128,94 @@ export function SuccessIcon({fill, ...props}:{fill?: string, props?: any}) {
         </Svg>
     )
 }
+
+export function MistakeIcon(props) {
+    return (
+        <Svg
+            width={25}
+            height={24}
+            viewBox="0 0 25 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M12.5 3a9 9 0 100 18 9 9 0 000-18zm-11 9c0-6.075 4.925-11 11-11s11 4.925 11 11-4.925 11-11 11-11-4.925-11-11z"
+                fill="#fff"
+            />
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M15.333 8.617a1 1 0 010 1.414l-4.792 4.792a1 1 0 11-1.414-1.414l4.792-4.792a1 1 0 011.414 0z"
+                fill="#fff"
+            />
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M9.124 8.614a1 1 0 011.414 0l4.796 4.797a1 1 0 11-1.414 1.414l-4.796-4.797a1 1 0 010-1.414z"
+                fill="#fff"
+            />
+        </Svg>
+    )
+}
+
+export function AverageIcon(props) {
+    return (
+        <Svg
+            width={25}
+            height={24}
+            viewBox="0 0 25 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M12.5 3a9 9 0 100 18 9 9 0 000-18zm-11 9c0-6.075 4.925-11 11-11s11 4.925 11 11-4.925 11-11 11-11-4.925-11-11z"
+                fill="#fff"
+            />
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M15.333 8.617a1 1 0 010 1.414l-4.792 4.792a1 1 0 11-1.414-1.414l4.792-4.792a1 1 0 011.414 0z"
+                fill="#fff"
+            />
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M9.124 8.614a1 1 0 011.414 0l4.796 4.797a1 1 0 11-1.414 1.414l-4.796-4.797a1 1 0 010-1.414z"
+                fill="#fff"
+            />
+        </Svg>
+    )
+}
+
+export function SearchIcon({isDark, ...props}:{isDark?: boolean, props?: any}) {
+    return (
+        <Svg
+            width={22}
+            height={22}
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M10.767 2.778a7.989 7.989 0 100 15.977 7.989 7.989 0 000-15.977zM.778 10.766C.778 5.25 5.25.778 10.767.778c5.516 0 9.988 4.472 9.988 9.988 0 5.517-4.472 9.989-9.988 9.989-5.517 0-9.989-4.472-9.989-9.989z"
+                fill={isDark ? '#fff' : "#131313"}
+            />
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M16.31 16.779a1 1 0 011.415-.002l3.523 3.515a1 1 0 11-1.412 1.416l-3.524-3.515a1 1 0 01-.002-1.414z"
+                fill={isDark ? '#fff' : "#131313"}
+            />
+        </Svg>
+    )
+}
+

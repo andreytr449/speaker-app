@@ -4,7 +4,7 @@ import {Pressable, SafeAreaView, ScrollView, Text, View} from "react-native";
 import BookHeader from "@/components/share/book-header";
 import OnBoardingTitle from "@/components/share/on-boarding-title";
 import UserProgress from "@/components/share/user-progress";
-import {DiscountIcon, MarkIcon, SuccessIcon} from "@/assets/icons/icons";
+import {DiscountIcon, MarkIcon} from "@/assets/icons/icons";
 import Chapter from "@/components/share/chapter";
 import OffersButton from "@/components/share/offers-button";
 
