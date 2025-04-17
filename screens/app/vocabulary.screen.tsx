@@ -83,14 +83,14 @@ const VocabularyScreen = () => {
 
 
                 <FlatList data={vocabularyDummyData}
-                          renderItem={({item}) => (<VocabularyCard title={item.title} imgUri={item.imgUri}/>)}
+                          renderItem={({item}) => (<VocabularyCard isActive={item.id === 'vocabCrdId - 1'} title={item.title} imgUri={item.imgUri}/>)}
                           keyExtractor={item => item.id}
                           showsVerticalScrollIndicator={false}
                 />
             </View>
 
             <View className='my-5 gap-5'>
-                <Button>Repeat</Button>
+                {/*<Button>Repeat</Button>*/}
                 <View className='px-5'>
                     <OffersButton buttonTitle='7 days - Free'
                                   title='Try Premium For Free'

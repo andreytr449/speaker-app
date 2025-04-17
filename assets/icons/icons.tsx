@@ -1,6 +1,6 @@
 import Svg, {G, Mask, Path} from "react-native-svg"
 
-export const Moon = (props:any) => {
+export const Moon = (props: any) => {
     return (
         <Svg
             width={24}
@@ -20,7 +20,7 @@ export const Moon = (props:any) => {
     )
 }
 
-export const Sun = (props:any) => {
+export const Sun = (props: any) => {
     return (
         <Svg
             width={24}
@@ -40,7 +40,7 @@ export const Sun = (props:any) => {
     )
 }
 
-export const LeftArrowDark = (props:any) => {
+export const LeftArrowDark = (props: any) => {
     return (
         <Svg
             width={24}
@@ -61,7 +61,7 @@ export const LeftArrowDark = (props:any) => {
     )
 }
 
-export const LeftArrowLight = (props:any) => {
+export const LeftArrowLight = (props: any) => {
     return (
         <Svg
             width={24}
@@ -139,10 +139,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#a)">
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </G>
             <Mask
                 id="b"
@@ -155,7 +155,7 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#b)">
                 <Path
@@ -174,7 +174,7 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#c)">
                 <Path
@@ -193,10 +193,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#d)">
-                <Path d="M0 1.828l9.471 6.85h2.214L0 .234v1.594z" fill="#BD0034" />
+                <Path d="M0 1.828l9.471 6.85h2.214L0 .234v1.594z" fill="#BD0034"/>
             </G>
             <Mask
                 id="e"
@@ -209,7 +209,7 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#e)">
                 <Path
@@ -228,10 +228,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#f)">
-                <Path d="M29.81 0H18.605v8.068L29.808 0z" fill="#1A237B" />
+                <Path d="M29.81 0H18.605v8.068L29.808 0z" fill="#1A237B"/>
             </G>
             <Mask
                 id="g"
@@ -244,10 +244,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#g)">
-                <Path d="M13.659 0H2.5l11.159 8.068V0z" fill="#1A237B" />
+                <Path d="M13.659 0H2.5l11.159 8.068V0z" fill="#1A237B"/>
             </G>
             <Mask
                 id="h"
@@ -260,10 +260,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#h)">
-                <Path d="M31.999 8.678V3.171l-7.6 5.507h7.6z" fill="#1A237B" />
+                <Path d="M31.999 8.678V3.171l-7.6 5.507h7.6z" fill="#1A237B"/>
             </G>
             <Mask
                 id="i"
@@ -276,10 +276,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#i)">
-                <Path d="M31.999 21.252v-5.447h-7.6l7.6 5.447z" fill="#1A237B" />
+                <Path d="M31.999 21.252v-5.447h-7.6l7.6 5.447z" fill="#1A237B"/>
             </G>
             <Mask
                 id="j"
@@ -292,10 +292,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#j)">
-                <Path d="M3.133 24.001h10.526v-7.585L3.133 24.001z" fill="#1A237B" />
+                <Path d="M3.133 24.001h10.526v-7.585L3.133 24.001z" fill="#1A237B"/>
             </G>
             <Mask
                 id="k"
@@ -308,10 +308,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#k)">
-                <Path d="M18.605 24.001h10.56l-10.56-7.585v7.585z" fill="#1A237B" />
+                <Path d="M18.605 24.001h10.56l-10.56-7.585v7.585z" fill="#1A237B"/>
             </G>
             <Mask
                 id="l"
@@ -324,10 +324,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#l)">
-                <Path d="M0 15.805v5.693l7.865-5.693H0z" fill="#1A237B" />
+                <Path d="M0 15.805v5.693l7.865-5.693H0z" fill="#1A237B"/>
             </G>
             <Mask
                 id="m"
@@ -340,10 +340,10 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#m)">
-                <Path d="M0 8.678h7.865L0 2.977v5.701z" fill="#1A237B" />
+                <Path d="M0 8.678h7.865L0 2.977v5.701z" fill="#1A237B"/>
             </G>
             <Mask
                 id="n"
@@ -356,7 +356,7 @@ export const UKFlag = (props: any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#n)">
                 <Path
@@ -368,7 +368,7 @@ export const UKFlag = (props: any) => {
     )
 }
 
-export const FranceFlag = (props:any) => {
+export const FranceFlag = (props: any) => {
     return (
         <Svg
             width={32}
@@ -389,10 +389,10 @@ export const FranceFlag = (props:any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#a)">
-                <Path d="M10.667 0H0v24h10.667V0z" fill="#323E95" />
+                <Path d="M10.667 0H0v24h10.667V0z" fill="#323E95"/>
             </G>
             <Mask
                 id="b"
@@ -405,10 +405,10 @@ export const FranceFlag = (props:any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#b)">
-                <Path d="M21.333 0H10.666v24h10.667V0z" fill="#F4F4F4" />
+                <Path d="M21.333 0H10.666v24h10.667V0z" fill="#F4F4F4"/>
             </G>
             <Mask
                 id="c"
@@ -421,17 +421,17 @@ export const FranceFlag = (props:any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#c)">
-                <Path d="M32 0H21.333v24H32V0z" fill="#D80031" />
+                <Path d="M32 0H21.333v24H32V0z" fill="#D80031"/>
             </G>
         </Svg>
     )
 }
 
 
-export const BelgianFlag = (props:any) => {
+export const BelgianFlag = (props: any) => {
     return (
         <Svg
             width={32}
@@ -452,10 +452,10 @@ export const BelgianFlag = (props:any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#a)">
-                <Path d="M10.667 0H0v24h10.667V0z" fill="#000" />
+                <Path d="M10.667 0H0v24h10.667V0z" fill="#000"/>
             </G>
             <Mask
                 id="b"
@@ -468,10 +468,10 @@ export const BelgianFlag = (props:any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#b)">
-                <Path d="M21.333 0H10.666v24h10.667V0z" fill="#FFE936" />
+                <Path d="M21.333 0H10.666v24h10.667V0z" fill="#FFE936"/>
             </G>
             <Mask
                 id="c"
@@ -484,16 +484,16 @@ export const BelgianFlag = (props:any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#c)">
-                <Path d="M32 0H21.333v24H32V0z" fill="#FF0F21" />
+                <Path d="M32 0H21.333v24H32V0z" fill="#FF0F21"/>
             </G>
         </Svg>
     )
 }
 
-export const TurkeyFlag = (props:any) => {
+export const TurkeyFlag = (props: any) => {
     return (
         <Svg
             width={32}
@@ -514,10 +514,10 @@ export const TurkeyFlag = (props:any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#a)">
-                <Path d="M32 0H0v24h32V0z" fill="#D00027" />
+                <Path d="M32 0H0v24h32V0z" fill="#D00027"/>
             </G>
             <Mask
                 id="b"
@@ -530,7 +530,7 @@ export const TurkeyFlag = (props:any) => {
                 width={32}
                 height={24}
             >
-                <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                <Path d="M32 0H0v24h32V0z" fill="#fff"/>
             </Mask>
             <G mask="url(#b)">
                 <Mask
@@ -544,7 +544,7 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#c)">
                     <Path
@@ -563,7 +563,7 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#d)">
                     <Path
@@ -582,10 +582,10 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#e)">
-                    <Path d="M13.277 11.998l2.217.929.36-1.432-2.577.503z" fill="#fff" />
+                    <Path d="M13.277 11.998l2.217.929.36-1.432-2.577.503z" fill="#fff"/>
                 </G>
                 <Mask
                     id="f"
@@ -598,7 +598,7 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#f)">
                     <Path
@@ -617,10 +617,10 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#g)">
-                    <Path d="M14.89 9.144v3.002h1.165L14.89 9.144z" fill="#fff" />
+                    <Path d="M14.89 9.144v3.002h1.165L14.89 9.144z" fill="#fff"/>
                 </G>
                 <Mask
                     id="h"
@@ -633,10 +633,10 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#h)">
-                    <Path d="M14.89 9.144l1.37 2.427-.942.881-.429-3.308z" fill="#fff" />
+                    <Path d="M14.89 9.144l1.37 2.427-.942.881-.429-3.308z" fill="#fff"/>
                 </G>
                 <Mask
                     id="i"
@@ -649,7 +649,7 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#i)">
                     <Path
@@ -668,10 +668,10 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#j)">
-                    <Path d="M14.89 14.856v-3.007h1.165l-1.166 3.007z" fill="#fff" />
+                    <Path d="M14.89 14.856v-3.007h1.165l-1.166 3.007z" fill="#fff"/>
                 </G>
                 <Mask
                     id="k"
@@ -684,7 +684,7 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#k)">
                     <Path
@@ -703,7 +703,7 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#l)">
                     <Path
@@ -722,7 +722,7 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#m)">
                     <Path
@@ -741,7 +741,7 @@ export const TurkeyFlag = (props:any) => {
                     width={32}
                     height={24}
                 >
-                    <Path d="M32 0H0v24h32V0z" fill="#fff" />
+                    <Path d="M32 0H0v24h32V0z" fill="#fff"/>
                 </Mask>
                 <G mask="url(#n)">
                     <Path
@@ -754,7 +754,7 @@ export const TurkeyFlag = (props:any) => {
     )
 }
 
-export const ArrowRightDark = (props:any) => {
+export const ArrowRightDark = (props: any) => {
     return (
         <Svg
             width={24}
@@ -775,7 +775,7 @@ export const ArrowRightDark = (props:any) => {
     )
 }
 
-export const ArrowRightLight = (props:any) => {
+export const ArrowRightLight = (props: any) => {
     return (
         <Svg
             width={24}
@@ -796,7 +796,7 @@ export const ArrowRightLight = (props:any) => {
     )
 }
 
-export const BookActive = (props:any) => {
+export const BookActive = (props: any) => {
     return (
         <Svg
             width={29}
@@ -815,7 +815,7 @@ export const BookActive = (props:any) => {
 }
 
 
-export const Book = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const Book = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={33}
@@ -842,8 +842,7 @@ export const Book = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
 }
 
 
-
-export const VocabularyIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const VocabularyIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={19}
@@ -864,8 +863,7 @@ export const VocabularyIcon = ({isDark, ...props}:{isDark?: boolean, props?: any
 }
 
 
-
-export const VocabularyActive = (props:any) => {
+export const VocabularyActive = (props: any) => {
     return (
         <Svg
             width={19}
@@ -886,9 +884,7 @@ export const VocabularyActive = (props:any) => {
 }
 
 
-
-
-export const ChatIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const ChatIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={29}
@@ -915,8 +911,7 @@ export const ChatIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => 
 }
 
 
-
-export const ProfileIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const ProfileIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={23}
@@ -936,7 +931,10 @@ export const ProfileIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) 
     )
 }
 
-export const ProfileIconActive = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const ProfileIconActive = ({isDark, ...props}: {
+    isDark?: boolean,
+    props?: any
+}) => {
     return (
         <Svg
             width={23}
@@ -956,7 +954,7 @@ export const ProfileIconActive = ({isDark, ...props}:{isDark?: boolean, props?: 
     )
 }
 
-export const ChatIconActive = (props:any) => {
+export const ChatIconActive = (props: any) => {
     return (
         <Svg
             width={33}
@@ -974,7 +972,7 @@ export const ChatIconActive = (props:any) => {
     )
 }
 
-export const FireIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const FireIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={18}
@@ -994,7 +992,7 @@ export const FireIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => 
     )
 }
 
-export const StarIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const StarIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={20}
@@ -1014,7 +1012,7 @@ export const StarIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => 
     )
 }
 
-export const BellIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const BellIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={18}
@@ -1034,7 +1032,7 @@ export const BellIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => 
     )
 }
 
-export const MarkIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const MarkIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={16}
@@ -1054,7 +1052,7 @@ export const MarkIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => 
     )
 }
 
-export const LockIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => {
+export const LockIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
             width={18}
@@ -1074,7 +1072,7 @@ export const LockIcon = ({isDark, ...props}:{isDark?: boolean, props?: any}) => 
     )
 }
 
-export function DiscountIcon({fill, ...props}:{fill?: string, props?: any}) {
+export function DiscountIcon({fill, ...props}: { fill?: string, props?: any }) {
     return (
         <Svg
             width={20}
@@ -1103,7 +1101,7 @@ export function DiscountIcon({fill, ...props}:{fill?: string, props?: any}) {
 }
 
 
-export function SuccessIcon({fill, ...props}:{fill?: string, props?: any}) {
+export function SuccessIcon({fill, ...props}: { fill?: string, props?: any }) {
     return (
         <Svg
             width={25}
@@ -1193,7 +1191,7 @@ export function AverageIcon(props) {
     )
 }
 
-export function SearchIcon({isDark, ...props}:{isDark?: boolean, props?: any}) {
+export function SearchIcon({isDark, ...props}: { isDark?: boolean, props?: any }) {
     return (
         <Svg
             width={22}
@@ -1219,3 +1217,71 @@ export function SearchIcon({isDark, ...props}:{isDark?: boolean, props?: any}) {
     )
 }
 
+export const ProgressChartIcon = ({isDark, ...props}: {
+    isDark?: boolean,
+    props?: any
+}) => {
+    return (
+        <Svg
+            width={20}
+            height={20}
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M12 3a3 3 0 013-3h2a3 3 0 013 3v14a3 3 0 01-3 3h-2c-.768 0-1.47-.289-2-.764A2.989 2.989 0 0111 20H9c-.768 0-1.47-.289-2-.764A2.989 2.989 0 015 20H3a3 3 0 01-3-3v-6a3 3 0 013-3h2c.35 0 .687.06 1 .17V7a3 3 0 013-3h2c.35 0 .687.06 1 .17V3zm2 14a1 1 0 001 1h2a1 1 0 001-1V3a1 1 0 00-1-1h-2a1 1 0 00-1 1v14zM12 7a1 1 0 00-1-1H9a1 1 0 00-1 1v10a1 1 0 001 1h2a1 1 0 001-1V7zm-6 4a1 1 0 00-1-1H3a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6z"
+                fill={isDark ? '#fff' : "#131313"}
+            />
+        </Svg>
+    )
+}
+
+
+export const ProgressChartActiveIcon = ({isDark, ...props}: {
+    isDark?: boolean,
+    props?: any
+}) => {
+    return (
+        <Svg
+            width={24}
+            height={24}
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path fill={isDark ? '#fff' : "#131313"} d="M3 12H9V20H3z"/>
+            <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M14 5a3 3 0 013-3h2a3 3 0 013 3v14a3 3 0 01-3 3h-2c-.768 0-1.47-.289-2-.764A2.989 2.989 0 0113 22h-2c-.768 0-1.47-.289-2-.764A2.989 2.989 0 017 22H5a3 3 0 01-3-3v-6a3 3 0 013-3h2c.35 0 .687.06 1 .17V9a3 3 0 013-3h2c.35 0 .687.06 1 .17V5zm2 14a1 1 0 001 1h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v14zM14 9a1 1 0 00-1-1h-2a1 1 0 00-1 1v10a1 1 0 001 1h2a1 1 0 001-1V9zm-6 4a1 1 0 00-1-1H5a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6z"
+                fill={isDark ? '#fff' : "#131313"}
+            />
+        </Svg>
+    )
+}
+
+export const ArrowDown = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
+    return (
+        <Svg
+            width={16}
+            height={10}
+            viewBox="0 0 16 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <Path
+                d="M15 1.5l-7 7-7-7"
+                stroke={isDark ? '#fff' : "#131313"}
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </Svg>
+    )
+}
