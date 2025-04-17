@@ -8,6 +8,7 @@ import {DiscountIcon, MarkIcon, SearchIcon} from "@/assets/icons/icons";
 import Button from "@/components/ui/button";
 import OffersButton from "@/components/share/offers-button";
 import VocabularyCard from "@/components/share/vocabulary-card";
+import AppHeader from "@/components/share/app-header";
 
 const InfoCard = ({title, icon, count}: {
     title: string,
@@ -45,14 +46,8 @@ const VocabularyScreen = () => {
     return (
         <SafeAreaView
             className={`flex-1 ${isDarkMode ? 'bg-bg-dark' : 'bg-bg-light'} justify-between`}>
-
             <View className='px-6 flex-1'>
-
-                <View className='flex-row justify-between mt-1 mb-4'>
-                    <OnBoardingTitle>Vocabulary</OnBoardingTitle>
-                    <SmallButton icon={<SearchIcon isDark={isDarkMode}/>}/>
-                </View>
-
+                <AppHeader title='Vocabulary' />
                 <View className='flex-row justify-between'>
                     {infoCardsDummyData.map(item => (
                         <InfoCard key={item.title} title={item.title} count={item.count}
