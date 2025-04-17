@@ -2,7 +2,6 @@ import React from 'react';
 import {Text, View} from "react-native";
 import useTheme from "@/store/theme";
 import Button from "@/components/ui/button";
-import {DiscountIcon} from "@/assets/icons/icons";
 
 const OffersButton = ({title, buttonTitle, mainColor, bgColor, bgIcon}:
                       { title: string, buttonTitle: string, mainColor?: string, bgColor? :string, bgIcon: React.ReactNode }) => {
@@ -30,13 +29,13 @@ const OffersButton = ({title, buttonTitle, mainColor, bgColor, bgIcon}:
 
     return (
         <View
-            className={`${viewBgColor} rounded-[12px] w-full py-4 justify-center items-center overflow-hidden`}>
+            className={`${viewBgColor} rounded-[12px] w-full py-2 justify-center items-center overflow-hidden`}>
             <View>
-                <Button textClassName='text-label-small '
+                <Button fullCustomTextClassName='text-label-large text-body-primary-dark'
                         className={`px-4 text-label-large ${mainColor ? `bg-[${mainColor}]`: ''}`}>{buttonTitle}</Button>
             </View>
             <View className='text-center max-w-64'>
-                <Text className={`${mainColor ? `text-[${mainColor}]` : 'text-primary'} text-title-large my-2 text-center`}>{title}</Text>
+                <Text className={`${mainColor ? `text-[${mainColor}]` : 'text-primary'} text-title-medium my-2 text-center`}>{title}</Text>
             </View>
 
 
