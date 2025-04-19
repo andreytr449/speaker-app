@@ -7,6 +7,12 @@ import {
     UKFlag
 } from "@/assets/icons/icons";
 
+export type todayTaskType = {
+    title: string;
+    count: number;
+    type: 'answer' | 'image' | 'record'
+}
+
 export const availableLanguages = [
     {name: 'English', flag: <UKFlag/>},
     {name: 'French', flag: <FranceFlag/>},
@@ -44,17 +50,52 @@ export const chapterDummyData = [
 ]
 
 export const infoCardsDummyData = [
-    {icon: <MistakeIcon />, title: 'Mistakes', count: 4},
-    {icon: <AverageIcon />, title: 'Average', count: 7},
-    {icon: <SuccessIcon />, title: 'Success', count: 15},
+    {icon: <MistakeIcon/>, title: 'Mistakes', count: 4},
+    {icon: <AverageIcon/>, title: 'Average', count: 7},
+    {icon: <SuccessIcon/>, title: 'Success', count: 15},
 ]
 
 export const vocabularyDummyData = [
-    { id: 'vocabCrdId - 1', title: 'Travel and speak 150 words for you', imgUri: 'https://www.mantripping.com/images/stories/advice-for-solo-travel-men/solo-man-traveling.jpg' },
-    { id: 'vocabCrdId - 2', title: 'Everything you need to know while on vacation', imgUri: 'https://t4.ftcdn.net/jpg/02/00/06/99/360_F_200069964_B1LUrtiIovZURlIJ5a0hfxzBuAeVyD70.jpg' },
-    { id: 'vocabCrdId - 3', title: '300 words you need to know to move', imgUri: 'https://i.guim.co.uk/img/media/b8ed8927f8ba824b2bd730c9d474f2524423186a/0_158_4716_2829/master/4716.jpg?width=1200&quality=85&auto=format&fit=max&s=835c461861214759b7211e65ff2cc206' },
-    { id: 'vocabCrdId - 4', title: 'Speak confidently at the restaurant', imgUri: 'https://www.thanx.com/wp-content/uploads/2019/02/thanx-full_service_restaurant_guide_to_customer_engagement-hero.jpg' },
-    { id: 'vocabCrdId - 5', title: 'Essential phrases for emergency situations', imgUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQekDoNJbwPruhpNI6wYVJPWq4C8_Sk6-mQdA&s' },
-    { id: 'vocabCrdId - 6', title: 'Learn the basics of shopping vocabulary', imgUri: 'https://media.istockphoto.com/id/1729402032/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BD%D0%B5%D1%83%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D0%B0%D1%8F-%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F-%D0%B6%D0%B5%D0%BD%D1%89%D0%B8%D0%BD%D0%B0-%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D1%89%D0%B0%D1%8F-%D1%81%D1%83%D0%BC%D0%BA%D0%B8-%D1%81-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D0%BC%D0%B8.jpg?s=612x612&w=0&k=20&c=CwwZBHzXG9_uJNswqtc1LDIcnCjHBks5rYlBNJbeQNs=' },
-    { id: 'vocabCrdId - 7', title: 'Everything you need to know to buy a car', imgUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRygUXIN2VtDCXCJ1M0cA3DjeLHG4GfnpSwLA&s' },
+    {
+        id: 'vocabCrdId - 1',
+        title: 'Travel and speak 150 words for you',
+        imgUri: 'https://www.mantripping.com/images/stories/advice-for-solo-travel-men/solo-man-traveling.jpg'
+    },
+    {
+        id: 'vocabCrdId - 2',
+        title: 'Everything you need to know while on vacation',
+        imgUri: 'https://t4.ftcdn.net/jpg/02/00/06/99/360_F_200069964_B1LUrtiIovZURlIJ5a0hfxzBuAeVyD70.jpg'
+    },
+    {
+        id: 'vocabCrdId - 3',
+        title: '300 words you need to know to move',
+        imgUri: 'https://i.guim.co.uk/img/media/b8ed8927f8ba824b2bd730c9d474f2524423186a/0_158_4716_2829/master/4716.jpg?width=1200&quality=85&auto=format&fit=max&s=835c461861214759b7211e65ff2cc206'
+    },
+    {
+        id: 'vocabCrdId - 4',
+        title: 'Speak confidently at the restaurant',
+        imgUri: 'https://www.thanx.com/wp-content/uploads/2019/02/thanx-full_service_restaurant_guide_to_customer_engagement-hero.jpg'
+    },
+    {
+        id: 'vocabCrdId - 5',
+        title: 'Essential phrases for emergency situations',
+        imgUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQekDoNJbwPruhpNI6wYVJPWq4C8_Sk6-mQdA&s'
+    },
+    {
+        id: 'vocabCrdId - 6',
+        title: 'Learn the basics of shopping vocabulary',
+        imgUri: 'https://media.istockphoto.com/id/1729402032/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BD%D0%B5%D1%83%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D0%B0%D1%8F-%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F-%D0%B6%D0%B5%D0%BD%D1%89%D0%B8%D0%BD%D0%B0-%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D1%89%D0%B0%D1%8F-%D1%81%D1%83%D0%BC%D0%BA%D0%B8-%D1%81-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D0%BC%D0%B8.jpg?s=612x612&w=0&k=20&c=CwwZBHzXG9_uJNswqtc1LDIcnCjHBks5rYlBNJbeQNs='
+    },
+    {
+        id: 'vocabCrdId - 7',
+        title: 'Everything you need to know to buy a car',
+        imgUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRygUXIN2VtDCXCJ1M0cA3DjeLHG4GfnpSwLA&s'
+    },
 ];
+
+
+export const dummyTodayTasks: todayTaskType[] = [
+    {title: 'Answer using English', count: 5, type: 'answer'},
+    {title: 'Describe the image', count: 2, type: 'image'},
+    {title: 'Record an audio message', count: 3, type: 'record'},
+]

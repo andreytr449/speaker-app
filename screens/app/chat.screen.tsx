@@ -4,6 +4,7 @@ import useTheme from "@/store/theme";
 import AppHeader from "@/components/share/app-header";
 import TabChatItem from "@/components/share/tab-chat-item";
 import ChatFriendScreen from "@/screens/app/chat/chat-friend.screen";
+import ChatExploreScreen from "@/screens/app/chat/chat-explore.screen";
 
 const ChatScreen = () => {
     const {isDarkMode} = useTheme()
@@ -16,20 +17,20 @@ const ChatScreen = () => {
             </View>
             <View
                 className={`h-auto border-b-2 px-6 ${isDarkMode ? 'border-border-dark' : 'border-border-light'} flex-row`}>
-                <TabChatItem isActive={currentChatScreen === 'users'} title='New Users'
+                <TabChatItem isActive={currentChatScreen === 'users'}
+                             title='New Users'
                              onPress={() => setCurrentChatScreen('users')}/>
-                <TabChatItem isActive={currentChatScreen === 'friends'} title='Friends'
+                <TabChatItem isActive={currentChatScreen === 'friends'}
+                             title='Friends'
                              onPress={() => setCurrentChatScreen('friends')}/>
             </View>
-
-            <View className='px-6'>
+            <View className='flex-1 px-6'>
                 {currentChatScreen === 'friends' ?
                     <ChatFriendScreen/>
                     :
-                    null
+                    <ChatExploreScreen/>
                 }
             </View>
-
         </SafeAreaView>
     );
 };
