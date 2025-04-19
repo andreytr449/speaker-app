@@ -15,7 +15,7 @@ const ChatScreen = () => {
                 <AppHeader title='Chat'/>
             </View>
             <View
-                className={`h-auto border-b-2 ${isDarkMode ? 'border-border-dark' : 'border-border-light'} flex-row`}>
+                className={`h-auto border-b-2 px-6 ${isDarkMode ? 'border-border-dark' : 'border-border-light'} flex-row`}>
                 <TabChatItem isActive={currentChatScreen === 'users'} title='New Users'
                              onPress={() => setCurrentChatScreen('users')}/>
                 <TabChatItem isActive={currentChatScreen === 'friends'} title='Friends'
