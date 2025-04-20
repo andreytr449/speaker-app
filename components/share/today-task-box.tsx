@@ -27,7 +27,7 @@ const TodayTaskBox = ({title, count, type}: todayTaskType) => {
         <View
             className="h-[110px] w-[110px] gap-5 bg-primary rounded-[12px] px-3 py-2 relative overflow-hidden">
             <Text
-                className="text-white text-left text-title-xs pr-1"
+                className="text-white text-left text-title-xs pr-1 font-normal"
                 numberOfLines={3}
                 ellipsizeMode="tail"
             >

@@ -8,25 +8,40 @@ import {
 } from 'react-native';
 import TodayTasks from '@/components/share/today-tasks';
 import useTheme from '@/store/theme';
+import QuestionCard from "@/components/share/question-card";
+import {dummyQuestions} from "@/constans";
 
 type Props = {
     onScroll: (e: NativeSyntheticEvent<NativeScrollEvent>) => void;
 };
 
-const ChatExploreScreen: React.FC<Props> = ({ onScroll }) => {
-    const { isDarkMode } = useTheme();
+const ChatExploreScreen: React.FC<Props> = ({onScroll}) => {
+    const {isDarkMode} = useTheme();
     return (
-        <FlatList
-            data={[1,2,3,4,1,2,3,4,1,2,3,4]}
-            renderItem={({ item }) => (
-                <View className="h-96 w-full bg-primary mb-4 p-5">
-                    <Text>123123</Text>
-                </View>
-            )}
-            ListHeaderComponent={<TodayTasks />}
-            onScroll={onScroll}
-            scrollEventThrottle={16}
-        />
+        <>
+            <FlatList
+                data={dummyQuestions}
+                showsVerticalScrollIndicator={false}
+                renderItem={({item}) => (
+                    <QuestionCard
+                        question={item.question}
+                        type={item.type}
+                        userImgUri={item.userImgUri}
+                        userName={item.userName}
+                        img={item.img}
+                        audio={item.audio}
+                    />
+                )}
+                ListHeaderComponent={
+                    <View>
+                        <TodayTasks/>
+                        <Text className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-title-medium my-5`}>Complete daily tasks to get bonus! 👑</Text>
+                    </View>
+                }
+                onScroll={onScroll}
+                scrollEventThrottle={16}
+            />
+        </>
     );
 };
 

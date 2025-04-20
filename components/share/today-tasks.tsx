@@ -10,7 +10,7 @@ const TodayTasks = () => {
     return (
         <View className="mb-4 flex-1">
             <Text className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-title-medium my-5`}>
-                Tasks today
+                Tasks today ✍️
             </Text>
             <FlatList
                 data={dummyTodayTasks}

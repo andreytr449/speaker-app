@@ -66,7 +66,7 @@ const ChatScreen: React.FC = () => {
 
     return (
         <SafeAreaView
-            className={`flex-1 ${isDarkMode ? 'bg-bg-dark' : 'bg-bg-light'}`}>
+            className={`flex-1 ${isDarkMode ? 'bg-bg-dark' : 'bg-bg-light'} relative`}>
             <View className="px-6">
                 <AppHeader title="Chat"/>
             </View>
@@ -99,7 +99,6 @@ const ChatScreen: React.FC = () => {
                     />
                 </AnimatedView>
             </View>
-
 
             <View className="flex-1 px-6">
                 {currentChatScreen === 'friends'

@@ -13,6 +13,15 @@ export type todayTaskType = {
     type: 'answer' | 'image' | 'record'
 }
 
+export type DailyQuestion = {
+    question?: string;
+    img?: string;
+    userImgUri: string;
+    userName: string;
+    audio?:string
+    type: 'answer' | 'image' | 'record'
+}
+
 export const availableLanguages = [
     {name: 'English', flag: <UKFlag/>},
     {name: 'French', flag: <FranceFlag/>},
@@ -98,4 +107,47 @@ export const dummyTodayTasks: todayTaskType[] = [
     {title: 'Answer using English', count: 5, type: 'answer'},
     {title: 'Describe the image', count: 2, type: 'image'},
     {title: 'Record an audio message', count: 3, type: 'record'},
+]
+
+export const dummyQuestions: DailyQuestion[] = [
+    {
+        userName: 'Megan Fox',
+        type: 'answer',
+        question: 'If I would have seen him, I would have told him the truth.',
+        userImgUri: 'https://v.wpimg.pl/NzE1ZmJhYRskUyxeZRNsDmcLeAQjSmJYMBNgT2VZfEJ1SXULIwQrCCBBNUMtGjsKJEYqQzoEYRs1WHUbe0cqEzZBNgwzRysXJ1Q-QnJdKxl1CTlfZ114H3ccbgxyWGNCdlI7QC4NKE10BDwPKwp6T2dM'
+    },
+    {
+        userName: 'Jason Statham',
+        type: 'answer',
+        audio: 'https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3',
+        question: 'Neither of the answers are correct.',
+        userImgUri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2ZJHCqvbwrYmln1iiTIkTJwC0atIVCccya2ucLRQCQByn_j7WBRha0auTDkt1I-SI-oy7gcEN63c6snfkcaXLqQ'
+    },
+    {
+        userName: 'Ryan Gosling',
+        type: 'answer',
+        img: 'https://media.istockphoto.com/id/1439820420/ru/%D1%84%D0%BE%D1%82%D0%BE/%D1%81%D0%B8%D0%BD%D0%B8%D0%B9-bmw-m3.jpg?s=612x612&w=0&k=20&c=HsOJmn1pKZFM36XRp9ex0svoRRkOssKYrzTgEw0ODhU=',
+        question: 'She suggested going to the museum instead.',
+        userImgUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXAYqRjClt0pmy_OncCgl0UJPPJmBVVtjruw&s'
+    },
+    {
+        userName: 'Megan Fox',
+        type: 'answer',
+        question: 'The book, that I bought yesterday, is very interesting.',
+        userImgUri: 'https://v.wpimg.pl/NzE1ZmJhYRskUyxeZRNsDmcLeAQjSmJYMBNgT2VZfEJ1SXULIwQrCCBBNUMtGjsKJEYqQzoEYRs1WHUbe0cqEzZBNgwzRysXJ1Q-QnJdKxl1CTlfZ114H3ccbgxyWGNCdlI7QC4NKE10BDwPKwp6T2dM'
+    },
+    {
+        userName: 'Megan Fox',
+        type: 'answer',
+        img: 'https://images.prismic.io/virginexperiencedays/207db631-6b1f-415a-bca1-0d0f115be17b_day-trip-to-the-25093853.jpg?auto=compress,format&rect=0,86,1200,628&w=1200&h=628',
+        question: 'I wish I knew the answer.',
+        userImgUri: 'https://v.wpimg.pl/NzE1ZmJhYRskUyxeZRNsDmcLeAQjSmJYMBNgT2VZfEJ1SXULIwQrCCBBNUMtGjsKJEYqQzoEYRs1WHUbe0cqEzZBNgwzRysXJ1Q-QnJdKxl1CTlfZ114H3ccbgxyWGNCdlI7QC4NKE10BDwPKwp6T2dM'
+    },
+    {
+        userName: 'Jason Statham',
+        type: 'answer',
+        audio: 'https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3',
+        question: 'Neither of the answers are correct.',
+        userImgUri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2ZJHCqvbwrYmln1iiTIkTJwC0atIVCccya2ucLRQCQByn_j7WBRha0auTDkt1I-SI-oy7gcEN63c6snfkcaXLqQ'
+    },
 ]
