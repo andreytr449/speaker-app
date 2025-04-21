@@ -7,26 +7,26 @@ module.exports = {
 		extend: {
 			fontSize: {
 				// Headline
-				'headline-large': ['40px', {lineHeight: '48px', letterSpacing: '-0.3px'}],
-				'headline-medium': ['32px', {lineHeight: '40px', letterSpacing: '-0.3px'}],
-				'headline-small': ['24px', {lineHeight: '32px', letterSpacing: '-0.3px'}],
-				'headline-xs': ['20px', {lineHeight: '24px', letterSpacing: '-0.3px'}],
+				'headline-large': ['40px', {lineHeight: '48px', letterSpacing: '0.3px'}],
+				'headline-medium': ['32px', {lineHeight: '40px', letterSpacing: '0.3px'}],
+				'headline-small': ['24px', {lineHeight: '32px', letterSpacing: '0.3px'}],
+				'headline-xs': ['20px', {lineHeight: '24px', letterSpacing: '0.3px'}],
 				
 				// Title
-				'title-large': ['24px', {lineHeight: '32px', letterSpacing: '-0.3px'}],
-				'title-medium': ['20px', {lineHeight: '24px', letterSpacing: '-0.3px'}],
-				'title-small': ['18px', {lineHeight: '24px', letterSpacing: '-0.3px'}],
-				'title-xs': ['16px', {lineHeight: '20px', letterSpacing: '-0.3px'}],
+				'title-large': ['24px', {lineHeight: '32px', letterSpacing: '0.3px'}],
+				'title-medium': ['20px', {lineHeight: '24px', letterSpacing: '0.3px'}],
+				'title-small': ['18px', {lineHeight: '24px', letterSpacing: '0.3px'}],
+				'title-xs': ['16px', {lineHeight: '20px', letterSpacing: '0.3px'}],
 				
 				// Label
-				'label-large': ['20px', {lineHeight: '24px', letterSpacing: '-0.4px'}],
-				'label-medium': ['16px', {lineHeight: '20px', letterSpacing: '-0.4px'}],
-				'label-small': ['14px', {lineHeight: '20px', letterSpacing: '-0.4px'}],
+				'label-large': ['20px', {lineHeight: '24px', letterSpacing: '0.4px'}],
+				'label-medium': ['16px', {lineHeight: '20px', letterSpacing: '0.4px'}],
+				'label-small': ['14px', {lineHeight: '20px', letterSpacing: '0.4px'}],
 				
 				// Body
-				'body-large': ['20px', {lineHeight: '24px', letterSpacing: '-0.3px'}],
-				'body-medium': ['16px', {lineHeight: '20px', letterSpacing: '-0.3px'}],
-				'body-small': ['14px', {lineHeight: '20px', letterSpacing: '-0.3px'}]
+				'body-large': ['20px', {lineHeight: '24px', letterSpacing: '0.3px'}],
+				'body-medium': ['16px', {lineHeight: '20px', letterSpacing: '0.3px'}],
+				'body-small': ['14px', {lineHeight: '20px', letterSpacing: '0.3px'}]
 			},
 			colors: {
 				primary: {
