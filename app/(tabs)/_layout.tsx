@@ -19,6 +19,7 @@ export default function TabLayout() {
             tabBarStyle: {
                 backgroundColor: isDarkMode ? '#262626' : '#F8F8F8',
                 paddingTop: 12,
+                paddingHorizontal: 22,
                 height: 90,
                 borderTopWidth: 0,
             }
