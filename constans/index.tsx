@@ -151,3 +151,16 @@ export const dummyQuestions: DailyQuestion[] = [
         userImgUri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2ZJHCqvbwrYmln1iiTIkTJwC0atIVCccya2ucLRQCQByn_j7WBRha0auTDkt1I-SI-oy7gcEN63c6snfkcaXLqQ'
     },
 ]
+
+export interface UserProgressType {
+    fill:number
+    fistBlock: string
+    secondBlock: string
+    bottomText:string
+}
+
+export const dummyUserProgress:UserProgressType[] = [
+    {fill: 50, fistBlock: '3 words learned', secondBlock: '1 certificates', bottomText: 'Language Knowledge'},
+    {fill: 40, fistBlock: '31 completed exercises', secondBlock: '3 certificates', bottomText: 'Completed exercises'},
+    {fill: 89, fistBlock: '5 corrections', secondBlock: '12 certificates', bottomText: 'Left to get a new level'},
+]

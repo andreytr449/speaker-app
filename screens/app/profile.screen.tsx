@@ -2,16 +2,13 @@ import React, {useRef} from 'react';
 import {
     Animated,
     SafeAreaView,
-    Dimensions,
     View,
     Text,
     Image
 } from 'react-native';
 import useTheme from '@/store/theme';
 import ProfileHeader from '@/components/share/profile-header';
-import {AnimatedCircularProgress} from 'react-native-circular-progress';
-import UserProgressCircle from "@/components/share/user-progress-circle";
-import OnBoardingTitle from "@/components/share/on-boarding-title";
+import ProfileScreenBody from "@/components/share/profile-screen-body";
 
 
 const ProfileScreen = () => {
@@ -25,7 +22,8 @@ const ProfileScreen = () => {
             }
         >
             <Animated.ScrollView
-                contentContainerStyle={{paddingTop: 100, paddingHorizontal: 24}}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{paddingTop: 100}}
                 onScroll={Animated.event(
                     [{nativeEvent: {contentOffset: {y: scrollY}}}],
                     {useNativeDriver: true}
@@ -33,7 +31,7 @@ const ProfileScreen = () => {
                 scrollEventThrottle={16}
             >
 
-                <View className='flex-row justify-between items-start'>
+                <View className='flex-row justify-between items-start px-5'>
                     <View className='flex-row gap-3'>
                         <Image
                             className='rounded-full w-[65px] h-[65px]'
@@ -42,32 +40,23 @@ const ProfileScreen = () => {
                         <View className='pt-2'>
                             <Text
                                 className={`text-title-xs ${isDarkMode ? 'text-bg-light' : 'text-bg-dark'}`}>Andrew
-                                Boyko</Text>
+                                Boyko 🧑‍💻</Text>
                             <Text
                                 className={`text-body-small ${isDarkMode ? 'text-body-secondary-dark' : 'text-body-secondary-light'}`}>Learn
                                 and become better!</Text>
                         </View>
                     </View>
                     <View
-                        className={`px-3 items-start rounded-[12px] ${isDarkMode ? 'bg-surfaces-dark-2' : 'bg-surfaces-light-2'}`}><Text
+                        className={`px-3  items-start rounded-[12px] ${isDarkMode ? 'bg-surfaces-dark-2' : 'bg-surfaces-light-2'}`}><Text
                         className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-label-small`}>Intermediate</Text></View>
                 </View>
-                <View
-                    className={`w-full h-[2px] my-6 ${isDarkMode ? 'bg-surfaces-dark-1' : 'bg-surfaces-light-1'}`}/>
-
-                <View className='flex-row justify-between items-center'>
-                    <OnBoardingTitle>Friends</OnBoardingTitle>
-                    <Text
-                        className={`mt-3 text-body-large text-primary`}>
-                        0
-                    </Text>
+                <View className='px-5'>
+                    <View
+                        className={`w-full h-[2px] my-6 ${isDarkMode ? 'bg-surfaces-dark-1' : 'bg-surfaces-light-1'}`}/>
                 </View>
-                <UserProgressCircle isDarkMode={isDarkMode}/>
-
-                <View className='h-96 py-36'><Text>123123</Text></View>
+                <ProfileScreenBody isDarkMode={isDarkMode}/>
             </Animated.ScrollView>
             <ProfileHeader scrollY={scrollY} isDarkMode={isDarkMode}/>
-
         </SafeAreaView>
     );
 };
