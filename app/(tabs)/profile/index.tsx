@@ -1,10 +1,10 @@
 import React from 'react';
 import ProfileScreen from "@/screens/app/profile.screen";
 
-const Profile = () => {
+const Index = () => {
     return (
         <ProfileScreen />
     );
 };
 
-export default Profile;
+export default Index;

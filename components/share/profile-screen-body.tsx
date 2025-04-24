@@ -6,6 +6,9 @@ import TabChatItem from "@/components/share/tab-chat-item";
 import UserStreak from "@/components/share/user-streak";
 import UserRating from "@/components/share/user-rating";
 import {dummyUserProgress} from "@/constans";
+import OffersButton from "@/components/share/offers-button";
+import {DiscountIcon} from "@/assets/icons/icons";
+import Button from "@/components/ui/button";
 
 const ProfileScreenBody = ({isDarkMode}: { isDarkMode: boolean }) => {
     const [currentChildPage, setCurrentChildPage] = useState<'progress' | 'exercises' | 'corrections'>('progress')
@@ -20,13 +23,15 @@ const ProfileScreenBody = ({isDarkMode}: { isDarkMode: boolean }) => {
 
     return (
         <>
-            <View className='flex-row justify-between items-center px-5'>
-                <OnBoardingTitle>Friends</OnBoardingTitle>
+            <View className='flex-row justify-between mb-3 items-center px-5'>
+                <OnBoardingTitle classname='mt-0'>Friends</OnBoardingTitle>
                 <Text
                     className={`mt-3 text-body-large text-primary`}>
                     0
                 </Text>
             </View>
+
+            <Button className='py-1'>Create daily task</Button>
 
             <View
                 className={`h-auto border-b-2 mt-6 mb-1 px-5 ${isDarkMode ? 'border-border-dark' : 'border-border-light'} flex-row`}
@@ -62,7 +67,11 @@ const ProfileScreenBody = ({isDarkMode}: { isDarkMode: boolean }) => {
                 <UserRating isDarkMode={isDarkMode}/>
 
             </View>
-
+            <View className='px-4 my-2'>
+                <OffersButton buttonTitle='7 days - Free'
+                              title='Try Premium For Free'
+                              bgIcon={<DiscountIcon/>} />
+            </View>
 
         </>
     );

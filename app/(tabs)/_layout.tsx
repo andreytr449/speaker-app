@@ -58,7 +58,7 @@ export default function TabLayout() {
             />
             
             <Tabs.Screen
-                name="profile"
+                name="profile/index"
                 options={{
                     tabBarIcon: ({focused}: { focused: boolean }) => {
                         return focused ?
@@ -67,6 +67,14 @@ export default function TabLayout() {
                     }
                 }}
             />
+
+            <Tabs.Screen
+                name="profile/settings"
+                options={{
+                    href: null,
+                }}
+            />
+
         </Tabs>
     );
 }

@@ -1,14 +1,18 @@
 import React from 'react';
 import {
-    Animated,
+    Animated, Pressable,
     View,
 } from 'react-native';
 import OnBoardingTitle from '@/components/share/on-boarding-title';
 import {AddFriendIcon, SettingsIcon} from '@/assets/icons/icons';
+import {router} from "expo-router";
 
 const THRESHOLD = 200;
 
-const ProfileHeader = ({scrollY, isDarkMode}:{scrollY: any, isDarkMode:boolean}) => {
+const ProfileHeader = ({scrollY, isDarkMode}: {
+    scrollY: any,
+    isDarkMode: boolean
+}) => {
     const iconsOpacity = scrollY.interpolate({
         inputRange: [0, THRESHOLD],
         outputRange: [1, 0],
@@ -21,6 +25,10 @@ const ProfileHeader = ({scrollY, isDarkMode}:{scrollY: any, isDarkMode:boolean})
         outputRange: [0, 1],
         extrapolate: 'clamp',
     });
+
+    const handleSettingsPress = () => {
+        router.push('/(tabs)/profile/settings');
+    }
 
     return (
         <View
@@ -52,7 +60,9 @@ const ProfileHeader = ({scrollY, isDarkMode}:{scrollY: any, isDarkMode:boolean})
             }}>
                 <View className='gap-7 flex-row'>
                     <AddFriendIcon isDark={isDarkMode}/>
-                    <SettingsIcon isDark={isDarkMode}/>
+                    <Pressable onPress={handleSettingsPress}>
+                        <SettingsIcon isDark={isDarkMode}/>
+                    </Pressable>
                 </View>
             </Animated.View>
         </View>

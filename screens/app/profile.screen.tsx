@@ -30,7 +30,6 @@ const ProfileScreen = () => {
                 )}
                 scrollEventThrottle={16}
             >
-
                 <View className='flex-row justify-between items-start px-5'>
                     <View className='flex-row gap-3'>
                         <Image
@@ -51,8 +50,7 @@ const ProfileScreen = () => {
                         className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-label-small`}>Intermediate</Text></View>
                 </View>
                 <View className='px-5'>
-                    <View
-                        className={`w-full h-[2px] my-6 ${isDarkMode ? 'bg-surfaces-dark-1' : 'bg-surfaces-light-1'}`}/>
+                    <View className={`w-full h-[2px] mt-6 mb-4 ${isDarkMode ? 'bg-surfaces-dark-1' : 'bg-surfaces-light-1'}`}/>
                 </View>
                 <ProfileScreenBody isDarkMode={isDarkMode}/>
             </Animated.ScrollView>

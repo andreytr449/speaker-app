@@ -6,6 +6,9 @@ import {
     TurkeyFlag,
     UKFlag
 } from "@/assets/icons/icons";
+import {itemType} from "@/components/share/settings-list";
+import {Image} from "react-native";
+import React from "react";
 
 export type todayTaskType = {
     title: string;
@@ -163,4 +166,16 @@ export const dummyUserProgress:UserProgressType[] = [
     {fill: 50, fistBlock: '3 words learned', secondBlock: '1 certificates', bottomText: 'Language Knowledge'},
     {fill: 40, fistBlock: '31 completed exercises', secondBlock: '3 certificates', bottomText: 'Completed exercises'},
     {fill: 89, fistBlock: '5 corrections', secondBlock: '12 certificates', bottomText: 'Left to get a new level'},
+]
+
+export const settingsListItems:itemType[] = [
+    {name: 'User Name', value: 'Andrew Boyko', type: 'text'},
+    {name: 'Avatar', value:   <Image
+            className='rounded-full w-[30px] h-[30px]'
+            source={{uri: 'https://i.pinimg.com/736x/fd/30/ef/fd30ef808f9e58031f40c98581418e1d.jpg'}}
+        />, type: 'component'},
+    {name: 'About Me', value: 'Learn and become better', type: 'text'},
+    {name: 'Email', value: 'someemail@gmail.com', type: 'text'},
+    {name: 'I speak', value: 'Poland', type: 'text'},
+    {name: 'Plan of education', value: 'Free', type: 'text'},
 ]
