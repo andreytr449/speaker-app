@@ -19,6 +19,7 @@ export default function TabLayout() {
             tabBarStyle: {
                 backgroundColor: isDarkMode ? '#262626' : '#F8F8F8',
                 paddingTop: 12,
+                paddingHorizontal: 22,
                 height: 90,
                 borderTopWidth: 0,
             }
@@ -57,7 +58,7 @@ export default function TabLayout() {
             />
             
             <Tabs.Screen
-                name="profile"
+                name="profile/index"
                 options={{
                     tabBarIcon: ({focused}: { focused: boolean }) => {
                         return focused ?
@@ -66,6 +67,14 @@ export default function TabLayout() {
                     }
                 }}
             />
+
+            <Tabs.Screen
+                name="profile/settings"
+                options={{
+                    href: null,
+                }}
+            />
+
         </Tabs>
     );
 }
