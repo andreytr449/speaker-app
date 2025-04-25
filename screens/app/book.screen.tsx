@@ -12,6 +12,7 @@ import {GestureHandlerRootView} from "react-native-gesture-handler";
 import ChapterCardBottomSheet
     from "@/components/share/chapter-card-bottom-sheet";
 import useCurrentChapterItem from "@/store/selected-chapter";
+import ShimmerButton from "@/components/share/shimmer-button";
 
 const BookScreen = () => {
     const {isDarkMode} = useTheme()
@@ -48,12 +49,19 @@ const BookScreen = () => {
                         </Pressable>
                     </View>
                     <UserProgress/>
-                    <View className='my-4'/>
-                    <OffersButton buttonTitle='7 days - Free'
-                                  title='Try Premium For Free'
-                                  bgIcon={<DiscountIcon/>}
-                    />
 
+                    <View className='mt-8 gap-3'>
+                        <ShimmerButton
+                            isDarkTheme={isDarkMode}
+                            title="Learn English with AI"
+                            onPress={() => console.log('Pressed!')}
+                        />
+                        <OffersButton buttonTitle='7 days - Free'
+                                      title='Try Premium For Free'
+                                      bgIcon={<DiscountIcon/>}
+                        />
+
+                    </View>
 
                     <Chapter chapterTitle='Chapter - 1' chapterName='Traveling'
                              onCardPress={handleOpenSheet}/>
