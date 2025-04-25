@@ -3,23 +3,34 @@ import {View, Text, Image, Pressable} from "react-native";
 import useTheme from "@/store/theme";
 import {LockIcon, MarkIcon} from "@/assets/icons/icons";
 import {LinearGradient} from 'expo-linear-gradient';
+import useCurrentChapterItem from "@/store/selected-chapter";
 
 
-const ChapterCard = ({title, imgUri, isActive, isLast, isLock}: {
+const ChapterCard = ({title, imgUri, isActive, isLast, isLock, onPress}: {
     title: string,
     imgUri: string,
     isActive: boolean,
     isLast: boolean,
     isLock?: boolean
+    onPress: () => void,
 }) => {
     const {isDarkMode} = useTheme()
+    const {setChapterItem} = useCurrentChapterItem()
     const startColor = isDarkMode ? '#393939' : '#F2F2F2';
     const endColor = '#007AFF';
-    const handlePress = () => {
-        console.log('PRESS!')
-    }
     const addToFavorite = () => {
         console.log('favourite!')
+    }
+    const handlePress = () => {
+        console.log('PRESS!!!')
+        setChapterItem({
+            title: title,
+            imgUri: imgUri,
+            progress: 45,
+            isLock: false,
+            description: 'Talk about hotel situations with this lesson! Students practise hotel-related vocabulary, watch a short video on a hotel stay and share their own experiences. They also work in pairs and role-play hotel scenarios.'
+        })
+        onPress()
     }
     return (
         <View
@@ -48,12 +59,13 @@ const ChapterCard = ({title, imgUri, isActive, isLast, isLock}: {
             </Pressable>
 
             <Pressable onPress={addToFavorite}
-                className={`mr-2 w-12 h-12 ${isActive ? 'border-2 border-primary' : `${isDarkMode ? 'bg-surfaces-dark-1' : 'bg-surfaces-light-1'}`}  rounded-[12px] items-center justify-center`}>
+                       className={`mr-2 w-12 h-12 ${isActive ? 'border-2 border-primary' : `${isDarkMode ? 'bg-surfaces-dark-1' : 'bg-surfaces-light-1'}`}  rounded-[12px] items-center justify-center`}>
                 <MarkIcon isDark={isDarkMode}/>
             </Pressable>
 
             {isLast ?
-                <View style={{position: 'absolute', bottom: '-28%', left: '14%'}}>
+                <View
+                    style={{position: 'absolute', bottom: '-28%', left: '14%'}}>
                     <LinearGradient
                         colors={[startColor, endColor]}
                         style={{height: 35, width: 3}}
