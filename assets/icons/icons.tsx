@@ -983,8 +983,8 @@ export const ChatIconActive = (props: any) => {
 export const FireIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
-            width={18}
-            height={20}
+            width={15}
+            height={17}
             viewBox="0 0 18 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -1003,8 +1003,8 @@ export const FireIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) 
 export const StarIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
-            width={20}
-            height={20}
+            width={17}
+            height={17}
             viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -1023,8 +1023,8 @@ export const StarIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) 
 export const BellIcon = ({isDark, ...props}: { isDark?: boolean, props?: any }) => {
     return (
         <Svg
-            width={18}
-            height={20}
+            width={17}
+            height={17}
             viewBox="0 0 18 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

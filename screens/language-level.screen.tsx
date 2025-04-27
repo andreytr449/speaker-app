@@ -98,7 +98,9 @@ const LanguageLevelScreen = () => {
                 snapPoints={snapPoints}
                 enablePanDownToClose
                 index={-1}
-
+                handleIndicatorStyle={{
+                    backgroundColor: isDarkMode ? '#F8F8F8' : '#131313',
+                }}
                 onChange={handleSheetChanges}
                 backgroundStyle={{
                     backgroundColor: isDarkMode ? '#262626' : '#F8F8F8',
