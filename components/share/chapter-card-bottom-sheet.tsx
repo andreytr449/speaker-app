@@ -6,7 +6,7 @@ import Button from "@/components/ui/button";
 import UserProgress from "@/components/share/user-progress";
 import {MarkIcon} from "@/assets/icons/icons";
 
-interface ChapterCardBottomSheetProps extends ChapterItemType {
+export interface ChapterCardBottomSheetProps extends ChapterItemType {
     bottomSheetRef: RefObject<BottomSheet>;
     snapPoints: (string | number)[];
     isDarkMode: boolean;
@@ -29,8 +29,11 @@ const ChapterCardBottomSheet = ({
             snapPoints={snapPoints}
             enablePanDownToClose
             index={-1}
+            handleIndicatorStyle={{
+                backgroundColor: isDarkMode ? '#F8F8F8' : '#131313',
+            }}
             backgroundStyle={{
-                backgroundColor: isDarkMode ? '#151515' : '#fff',
+                backgroundColor: isDarkMode ? '#262626' : '#F8F8F8',
             }}
         >
             <BottomSheetView className='flex-1'>

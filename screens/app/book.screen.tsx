@@ -1,7 +1,6 @@
 import React, {useMemo, useRef} from 'react';
 import useTheme from "@/store/theme";
 import {
-    Image,
     Pressable,
     SafeAreaView,
     ScrollView,
@@ -11,7 +10,7 @@ import {
 import BookHeader from "@/components/share/book-header";
 import OnBoardingTitle from "@/components/share/on-boarding-title";
 import UserProgress from "@/components/share/user-progress";
-import {DiscountIcon, LockIcon, MarkIcon} from "@/assets/icons/icons";
+import {DiscountIcon, MarkIcon} from "@/assets/icons/icons";
 import Chapter from "@/components/share/chapter";
 import OffersButton from "@/components/share/offers-button";
 import BottomSheet from "@gorhom/bottom-sheet";
@@ -21,10 +20,12 @@ import ChapterCardBottomSheet
 import useCurrentChapterItem from "@/store/selected-chapter";
 import ShimmerButton from "@/components/share/shimmer-button";
 import InstaStories from "@/components/share/insta-stories";
+import AiMessageBottomSheet from "@/components/share/ai-message-bottom-sheet";
 
 const BookScreen = () => {
     const {isDarkMode} = useTheme()
     const bottomSheetRef = useRef<BottomSheet>(null);
+    const aiBottomSheetRef = useRef<BottomSheet>(null);
     const snapPoints = useMemo(() => ['50%'], []);
     const {
         title,
@@ -40,6 +41,10 @@ const BookScreen = () => {
             description !== undefined &&
             progress !== undefined
         ) bottomSheetRef.current?.expand();
+    };
+
+    const handleOpenAISheet = () => {
+        aiBottomSheetRef.current?.expand();
     };
 
     return (
@@ -62,7 +67,7 @@ const BookScreen = () => {
                         <ShimmerButton
                             isDarkTheme={isDarkMode}
                             title="Learn English with AI"
-                            onPress={() => console.log('Pressed!')}
+                            onPress={handleOpenAISheet}
                         />
                         <OffersButton buttonTitle='7 days - Free'
                                       title='Try Premium For Free'
@@ -93,6 +98,12 @@ const BookScreen = () => {
                                         imgUri={imgUri}
                                         isLock={isLock}
                                         progress={progress}
+                />
+
+                <AiMessageBottomSheet
+                    bottomSheetRef={aiBottomSheetRef}
+                    snapPoints={snapPoints}
+                    isDarkMode={isDarkMode}
                 />
 
             </SafeAreaView>

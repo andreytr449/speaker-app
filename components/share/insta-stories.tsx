@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import {Pressable, Text, View} from 'react-native';
+import {Pressable, View} from 'react-native';
 import InstagramStories, {
     InstagramStoriesProps,
     InstagramStoriesPublicMethods
