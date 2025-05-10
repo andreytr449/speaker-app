@@ -5,6 +5,7 @@ import {ChapterItemType} from "@/store/selected-chapter";
 import Button from "@/components/ui/button";
 import UserProgress from "@/components/share/user-progress";
 import {MarkIcon} from "@/assets/icons/icons";
+import {useRouter} from "expo-router";
 
 export interface ChapterCardBottomSheetProps extends ChapterItemType {
     bottomSheetRef: RefObject<BottomSheet>;
@@ -17,12 +18,22 @@ const ChapterCardBottomSheet = ({
                                     isDarkMode,
                                     snapPoints,
                                     isLock,
+                                    id,
                                     progress,
                                     description,
                                     imgUri,
                                     title
                                 }: ChapterCardBottomSheetProps) => {
-   const isActive = false
+    const isActive = false
+    const router = useRouter();
+    const handlePress = () => {
+        router.push({
+            pathname: '/lesson/lesson',
+            params: {
+                id: id
+            },
+        });
+    }
     return (
         <BottomSheet
             ref={bottomSheetRef}
@@ -42,13 +53,14 @@ const ChapterCardBottomSheet = ({
                         className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} mb-3 text-center text-title-large`}>
                         {title}
                     </Text>
-                    <View className='flex-row justify-between items-center mb-4 '>
+                    <View
+                        className='flex-row justify-between items-center mb-4 '>
                         <Text
                             className={`${isDarkMode ? 'text-bg-light/60' : 'text-bg-dark/60'} text-title-small`}>
                             - Chapter 1:Travelling
                         </Text>
                         <Pressable
-                                   className={`mr-2 w-12 h-12 ${isActive ? 'border-2 border-primary' : `${isDarkMode ? 'bg-surfaces-dark-1' : 'bg-surfaces-light-1'}`}  rounded-[12px] items-center justify-center`}>
+                            className={`mr-2 w-12 h-12 ${isActive ? 'border-2 border-primary' : `${isDarkMode ? 'bg-surfaces-dark-1' : 'bg-surfaces-light-1'}`}  rounded-[12px] items-center justify-center`}>
                             <MarkIcon isDark={isDarkMode}/>
                         </Pressable>
                     </View>
@@ -82,7 +94,8 @@ const ChapterCardBottomSheet = ({
 
                 </ScrollView>
                 <View className='mb-2'>
-                    <Button className={isLock ? 'bg-netural' : ''}>🚀 Start
+                    <Button onPress={handlePress}
+                            className={isLock ? 'bg-netural' : ''}>🚀 Start
                         lesson</Button>
                 </View>
             </BottomSheetView>

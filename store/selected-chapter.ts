@@ -6,6 +6,7 @@ export interface ChapterItemType {
     isLock?: boolean;
     description?: string;
     progress?: number;
+    id?: string;
 }
 
 interface ChapterItemStore extends ChapterItemType {
@@ -17,6 +18,7 @@ const useCurrentChapterItem = create<ChapterItemStore>((set) => ({
     title: undefined,
     imgUri: undefined,
     isLast: undefined,
+    id: undefined,
     description: undefined,
     progress: undefined,
 
@@ -29,6 +31,7 @@ const useCurrentChapterItem = create<ChapterItemStore>((set) => ({
             title: undefined,
             imgUri: undefined,
             isLock: undefined,
+            id: undefined,
             description: undefined,
             progress: undefined,
         });

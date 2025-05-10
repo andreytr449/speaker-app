@@ -21,7 +21,7 @@ export type DailyQuestion = {
     img?: string;
     userImgUri: string;
     userName: string;
-    audio?:string
+    audio?: string
     type: 'answer' | 'image' | 'record'
 }
 
@@ -45,21 +45,179 @@ export const minutesVariants = [3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60
 export const chapterDummyData = [
     {
         imgUri: 'https://images.theconversation.com/files/578175/original/file-20240227-28-cejldv.jpg?ixlib=rb-4.1.0&rect=0%2C0%2C7668%2C3828&q=45&auto=format&w=1356&h=668&fit=crop',
-        title: "🗺️ We're going on vocation"
+        title: "🗺️ We're going on vocation",
+        id: "lesson-1"
     },
     {
         imgUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOGFxfRXqtg5aKF4y2wDaLgVgO69jRyC2xlw&s',
-        title: "✈️ Description of travel experiences"
+        title: "✈️ Description of travel experiences",
+        id: "lesson-2"
     },
     {
         imgUri: 'https://lh3.googleusercontent.com/proxy/HC1jfDcJNLCJzEE4g_wCeQsVuxqNtvKQKToLIllcb_qXnfBM7bnfrPhvTdapnislGxh0eKcbeWGmZQAq1zLYVOOYWioSA1w8UUhRJXqb9eBPg4oHKSpR-s-JLFiGqJjcyf2Tj-OT-KOzQpvH',
-        title: "🏆 Discussing types of vocation"
+        title: "🏆 Discussing types of vocation",
+        id: "lesson-3"
     },
     {
         imgUri: 'https://st2.depositphotos.com/2309453/8331/i/950/depositphotos_83313510-stock-photo-office-people-discussing-document-in.jpg',
-        title: "✍️ Developing speaking and writing skills"
+        title: "✍️ Developing speaking and writing skills",
+        id: "lesson-4"
     },
 ]
+
+export const lessonData = [
+    {
+        lessonId: 'lesson-1',
+        lessonData: [
+            {
+                title: 'About the lesson',
+                lessonData: [{
+                    type: 'video',
+                    videoUri: 'https://www.youtube.com/watch?v=2SfQzU7rY8A'
+                }]
+            },
+            {
+                title: 'Finish the sentences',
+                correctText: 'Correct! In the US, people say "on vacation", while in the UK, they usually say "on holiday". Well done!',
+                wrongText: 'Oops, that’s not quite right. The correct answer is "on vacation". In the US, that’s the usual phrase. Try again!',
+                lessonData: [
+                    {
+                        type: 'video',
+                        videoUri: 'https://www.youtube.com/watch?v=2SfQzU7rY8A'
+                    },
+                    {
+                        type: 'sentence',
+                        textData: 'Did you know that in USA people say: "_________" but in the UK people normally say "on holiday"?',
+                        variants: [
+                            {question: 'on vacation', correct: true},
+                            {question: 'in vacation', correct: false},
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Is the sentence written correctly?',
+                correctText: 'Correct! In the US, people say "on vacation", while in the UK, they usually say "on holiday". Well done!',
+                wrongText: 'Oops, that’s not quite right. The correct answer is "on vacation". In the US, that’s the usual phrase. Try again!',
+                lessonData: [
+                    {
+                        type: 'video',
+                        videoUri: 'https://www.youtube.com/watch?v=2SfQzU7rY8A'
+                    },
+                    {
+                        type: 'sentence',
+                        textData: "I'm going abroad next month with a friend! I can't wait!",
+                        variants: [
+                            {question: 'Right', correct: false},
+                            {question: 'Wrong', correct: true},
+                        ]
+                    }
+                ]
+            },
+        ]
+    },
+    {
+        lessonId: 'lesson-2',
+        lessonData: [
+            {
+                title: 'About the lesson',
+                lessonData: [{
+                    type: 'video',
+                    videoUri: 'https://www.youtube.com/watch?v=1n5RPQZtC14'
+                }]
+            },
+            {
+                title: 'Finish the sentences',
+                correctText: 'Correct! In the UK, "at the weekend" is commonly used. Great job!',
+                wrongText: 'Not quite. The correct phrase in the UK is "at the weekend". Keep going!',
+                lessonData: [
+                    {
+                        type: 'video',
+                        videoUri: 'https://www.youtube.com/watch?v=1n5RPQZtC14'
+                    },
+                    {
+                        type: 'sentence',
+                        textData: 'In the UK people say "at the weekend", but in the US they usually say: "_________"',
+                        variants: [
+                            {question: 'on the weekend', correct: true},
+                            {question: 'in the weekend', correct: false},
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Is the sentence written correctly?',
+                correctText: 'Correct! Americans often say "on the weekend". Good catch!',
+                wrongText: 'Incorrect. The correct version would be "on the weekend" in US English.',
+                lessonData: [
+                    {
+                        type: 'video',
+                        videoUri: 'https://www.youtube.com/watch?v=1n5RPQZtC14'
+                    },
+                    {
+                        type: 'sentence',
+                        textData: 'Let’s go hiking at the weekend if the weather is nice.',
+                        variants: [
+                            {question: 'Right', correct: true},
+                            {question: 'Wrong', correct: false},
+                        ]
+                    }
+                ]
+            },
+        ]
+    },
+    {
+        lessonId: 'lesson-3',
+        lessonData: [
+            {
+                title: 'About the lesson',
+                lessonData: [{
+                    type: 'video',
+                    videoUri: 'https://www.youtube.com/watch?v=5Z1QWZIQV1o'
+                }]
+            },
+            {
+                title: 'Finish the sentences',
+                correctText: 'Correct! In British English, it’s "at university". Well done!',
+                wrongText: 'That’s not correct. The British usually say "at university". Try again!',
+                lessonData: [
+                    {
+                        type: 'video',
+                        videoUri: 'https://www.youtube.com/watch?v=5Z1QWZIQV1o'
+                    },
+                    {
+                        type: 'sentence',
+                        textData: 'In American English, people say "in college", but in British English, they say: "_________"',
+                        variants: [
+                            {question: 'at university', correct: true},
+                            {question: 'on university', correct: false},
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Is the sentence written correctly?',
+                correctText: 'Correct! That sentence uses British English accurately. Good job!',
+                wrongText: 'Oops! In British English, it should be "at university". Watch out for prepositions!',
+                lessonData: [
+                    {
+                        type: 'video',
+                        videoUri: 'https://www.youtube.com/watch?v=5Z1QWZIQV1o'
+                    },
+                    {
+                        type: 'sentence',
+                        textData: 'My sister is studying at university in London.',
+                        variants: [
+                            {question: 'Right', correct: true},
+                            {question: 'Wrong', correct: false},
+                        ]
+                    }
+                ]
+            },
+        ]
+    }
+];
+
 
 export const infoCardsDummyData = [
     {icon: <MistakeIcon/>, title: 'Mistakes', count: 4},
@@ -156,24 +314,41 @@ export const dummyQuestions: DailyQuestion[] = [
 ]
 
 export interface UserProgressType {
-    fill:number
+    fill: number
     fistBlock: string
     secondBlock: string
-    bottomText:string
+    bottomText: string
 }
 
-export const dummyUserProgress:UserProgressType[] = [
-    {fill: 50, fistBlock: '3 words learned', secondBlock: '1 certificates', bottomText: 'Language Knowledge'},
-    {fill: 40, fistBlock: '31 completed exercises', secondBlock: '3 certificates', bottomText: 'Completed exercises'},
-    {fill: 89, fistBlock: '5 corrections', secondBlock: '12 certificates', bottomText: 'Left to get a new level'},
+export const dummyUserProgress: UserProgressType[] = [
+    {
+        fill: 50,
+        fistBlock: '3 words learned',
+        secondBlock: '1 certificates',
+        bottomText: 'Language Knowledge'
+    },
+    {
+        fill: 40,
+        fistBlock: '31 completed exercises',
+        secondBlock: '3 certificates',
+        bottomText: 'Completed exercises'
+    },
+    {
+        fill: 89,
+        fistBlock: '5 corrections',
+        secondBlock: '12 certificates',
+        bottomText: 'Left to get a new level'
+    },
 ]
 
-export const settingsListItems:itemType[] = [
+export const settingsListItems: itemType[] = [
     {name: 'User Name', value: 'Andrew Boyko', type: 'text'},
-    {name: 'Avatar', value:   <Image
+    {
+        name: 'Avatar', value: <Image
             className='rounded-full w-[30px] h-[30px]'
             source={{uri: 'https://i.pinimg.com/736x/fd/30/ef/fd30ef808f9e58031f40c98581418e1d.jpg'}}
-        />, type: 'component'},
+        />, type: 'component'
+    },
     {name: 'About Me', value: 'Learn and become better', type: 'text'},
     {name: 'Email', value: 'someemail@gmail.com', type: 'text'},
     {name: 'I speak', value: 'Poland', type: 'text'},

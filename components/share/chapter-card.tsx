@@ -6,9 +6,10 @@ import {LinearGradient} from 'expo-linear-gradient';
 import useCurrentChapterItem from "@/store/selected-chapter";
 
 
-const ChapterCard = ({title, imgUri, isActive, isLast, isLock, onPress}: {
+const ChapterCard = ({title, imgUri, id, isActive, isLast, isLock, onPress}: {
     title: string,
     imgUri: string,
+    id: string,
     isActive: boolean,
     isLast: boolean,
     isLock?: boolean
@@ -26,6 +27,7 @@ const ChapterCard = ({title, imgUri, isActive, isLast, isLock, onPress}: {
         setChapterItem({
             title: title,
             imgUri: imgUri,
+            id:id,
             progress: 45,
             isLock: false,
             description: 'Talk about hotel situations with this lesson! Students practise hotel-related vocabulary, watch a short video on a hotel stay and share their own experiences. They also work in pairs and role-play hotel scenarios.'
