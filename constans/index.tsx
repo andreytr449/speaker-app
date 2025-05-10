@@ -71,6 +71,7 @@ export const lessonData = [
         lessonData: [
             {
                 title: 'About the lesson',
+                isQuestion: false,
                 lessonData: [{
                     type: 'video',
                     videoUri: 'https://www.youtube.com/watch?v=2SfQzU7rY8A'
@@ -78,6 +79,7 @@ export const lessonData = [
             },
             {
                 title: 'Finish the sentences',
+                isQuestion: true,
                 correctText: 'Correct! In the US, people say "on vacation", while in the UK, they usually say "on holiday". Well done!',
                 wrongText: 'Oops, that’s not quite right. The correct answer is "on vacation". In the US, that’s the usual phrase. Try again!',
                 lessonData: [
@@ -97,6 +99,7 @@ export const lessonData = [
             },
             {
                 title: 'Is the sentence written correctly?',
+                isQuestion: true,
                 correctText: 'Correct! In the US, people say "on vacation", while in the UK, they usually say "on holiday". Well done!',
                 wrongText: 'Oops, that’s not quite right. The correct answer is "on vacation". In the US, that’s the usual phrase. Try again!',
                 lessonData: [
@@ -121,6 +124,7 @@ export const lessonData = [
         lessonData: [
             {
                 title: 'About the lesson',
+                isQuestion: false,
                 lessonData: [{
                     type: 'video',
                     videoUri: 'https://www.youtube.com/watch?v=1n5RPQZtC14'
@@ -128,6 +132,7 @@ export const lessonData = [
             },
             {
                 title: 'Finish the sentences',
+                isQuestion: true,
                 correctText: 'Correct! In the UK, "at the weekend" is commonly used. Great job!',
                 wrongText: 'Not quite. The correct phrase in the UK is "at the weekend". Keep going!',
                 lessonData: [
@@ -147,6 +152,7 @@ export const lessonData = [
             },
             {
                 title: 'Is the sentence written correctly?',
+                isQuestion: true,
                 correctText: 'Correct! Americans often say "on the weekend". Good catch!',
                 wrongText: 'Incorrect. The correct version would be "on the weekend" in US English.',
                 lessonData: [
@@ -171,6 +177,7 @@ export const lessonData = [
         lessonData: [
             {
                 title: 'About the lesson',
+                isQuestion: false,
                 lessonData: [{
                     type: 'video',
                     videoUri: 'https://www.youtube.com/watch?v=5Z1QWZIQV1o'
@@ -178,6 +185,7 @@ export const lessonData = [
             },
             {
                 title: 'Finish the sentences',
+                isQuestion: true,
                 correctText: 'Correct! In British English, it’s "at university". Well done!',
                 wrongText: 'That’s not correct. The British usually say "at university". Try again!',
                 lessonData: [
@@ -197,6 +205,7 @@ export const lessonData = [
             },
             {
                 title: 'Is the sentence written correctly?',
+                isQuestion: true,
                 correctText: 'Correct! That sentence uses British English accurately. Good job!',
                 wrongText: 'Oops! In British English, it should be "at university". Watch out for prepositions!',
                 lessonData: [
