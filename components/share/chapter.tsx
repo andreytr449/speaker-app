@@ -20,7 +20,8 @@ const Chapter = ({chapterTitle, chapterName, isLock, onCardPress}: {
                     className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-title-medium`}>{chapterTitle} 📚</Text>
                 <View
                     className={`${isDarkMode ? 'bg-surfaces-light-1' : 'bg-surfaces-dark-1'} w-6 h-[2px]`}/>
-                <Text className='text-primary text-title-medium'>{chapterName}</Text>
+                <Text
+                    className='text-primary text-title-medium'>{chapterName}</Text>
             </View>
             <View className='flex-row justify-between items-center'>
                 <Text
@@ -32,6 +33,7 @@ const Chapter = ({chapterTitle, chapterName, isLock, onCardPress}: {
             {chapterDummyData.map((item, index) => (
                 <ChapterCard key={index + chapterTitle} title={item.title}
                              imgUri={item.imgUri} isLock={isLock}
+                             id={item.id}
                              isActive={isLock ? index === 0 : index === 1}
                              isLast={index === chapterDummyData.length - 1}
                              onPress={onCardPress}

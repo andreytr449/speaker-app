@@ -32,12 +32,14 @@ const BookScreen = () => {
         progress,
         isLock,
         description,
-        imgUri
+        imgUri,
+        id
     } = useCurrentChapterItem()
     const handleOpenSheet = () => {
         if (
             title !== undefined &&
             imgUri !== undefined &&
+            id !== undefined &&
             description !== undefined &&
             progress !== undefined
         ) bottomSheetRef.current?.expand();
@@ -73,7 +75,6 @@ const BookScreen = () => {
                                       title='Try Premium For Free'
                                       bgIcon={<DiscountIcon/>}
                         />
-
                     </View>
 
                     <View className='mt-7 gap-4'>
@@ -94,6 +95,7 @@ const BookScreen = () => {
                                         snapPoints={snapPoints}
                                         isDarkMode={isDarkMode}
                                         title={title}
+                                        id={id}
                                         description={description}
                                         imgUri={imgUri}
                                         isLock={isLock}
