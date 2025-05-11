@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Pressable, Text, View} from "react-native";
 import useTheme from "@/store/theme";
 import {HelloLogoDark, HelloLogoLight} from "@/assets/images/logo/logo";
@@ -9,17 +9,81 @@ import AuthButton from "@/components/ui/auth-button";
 import {GoogleDark, GoogleLight} from "@/assets/icons/icons";
 import {Redirect, router} from "expo-router";
 import useAuthStore from "@/store/auth";
+import {validateEmail, validatePassword} from "@/lib/form-checker";
+import {API} from "@/services/api";
+import axios from "axios";
+
+type formType = {
+    emailError: undefined | string,
+    passwordError: undefined | string
+    reqError: undefined | string
+}
+
+type res = {
+    success: boolean
+    token: string
+}
 
 const EmailAuthFormScreen = () => {
     const {isDarkMode} = useTheme()
     const {isLogin} = useAuthStore()
+    const [email, setEmail] = useState('');
+    const [isLoading, setReqIsLoading] = useState(false)
+    const [isReqError, setReqIsError] = useState(false)
+    const [password, setPassword] = useState('');
+    const [isError, setIsError] = useState<formType>({
+        emailError: undefined,
+        passwordError: undefined,
+        reqError: undefined
+    });
 
-    if(isLogin === undefined)
-        return <Redirect href='/onboarding/welcome' />
 
-    const handlePress = () => {
+    if (isLogin === undefined)
+        return <Redirect href='/onboarding/welcome'/>
+
+    const handlePress = async () => {
+        if(isLoading) return
+
+        setIsError({
+            emailError: undefined,
+            passwordError: undefined,
+            reqError: undefined
+        })
+        setReqIsError(false)
+        setReqIsLoading(false)
         if (isLogin) {
-            return
+            const emailError = validateEmail(email);
+            const passwordError = validatePassword(password);
+
+            setIsError({
+                emailError,
+                passwordError,
+                reqError: undefined
+            });
+
+            if (emailError || passwordError) {
+                return;
+            }
+            try {
+                setReqIsLoading(true);
+                const res: res = await API.auth.signIn(email, password);
+                console.log(res)
+            } catch (e) {
+                if (axios.isAxiosError(e)) {
+                    const errorData = e.response?.data;
+                    setIsError({
+                        emailError,
+                        passwordError,
+                        reqError: errorData?.error || 'Something went wrong'
+                    });
+                    console.log('errorData:',errorData)
+                }
+                setReqIsError(true);
+            } finally {
+                setReqIsLoading(false);
+            }
+
+
         } else {
             router.push('/auth/create-username')
         }
@@ -37,12 +101,27 @@ const EmailAuthFormScreen = () => {
                             ? 'Log in and continue your learning'
                             : 'Sign up and start learning any language'}
                     </Text>
-                    <Input label='Email' placeholder='user@gmail.com'/>
+                    <Input label="Email"
+                           error={isError.emailError}
+                           placeholder="user@gmail.com"
+                           value={email}
+                           onChangeText={setEmail}
+                    />
+                    {isLogin &&
+											<Input label="Password"
+											       error={isError.passwordError}
+											       placeholder="your password"
+											       value={password}
+											       onChangeText={setPassword}
+											/>
+                    }
                 </View>
                 <View className='w-full px-1 py-2'>
-                    <Button onPress={handlePress}>Continue</Button>
+                    <Button onPress={handlePress}>{isLoading ? 'Loading...' :  'Continue'}</Button>
                 </View>
-
+                <View className='justify-center items-center'>
+                    <Text className={`mb-2 font-light text-body-small text-red`}>{isError.reqError}</Text>
+                </View>
                 <View className='flex-row w-full items-center px-5'>
                     <View className={`flex-1  h-[2px]`}
                           style={{backgroundColor: isDarkMode ? '#4C4C4C' : '#D7D7D7'}}/>
@@ -56,13 +135,17 @@ const EmailAuthFormScreen = () => {
                           style={{backgroundColor: isDarkMode ? '#4C4C4C' : '#D7D7D7'}}/>
                 </View>
                 <View className='w-full px-1 py-2'>
-                    <AuthButton icon={isDarkMode ? <GoogleLight/> : <GoogleDark/>}>Sign up
+                    <AuthButton
+                        icon={isDarkMode ? <GoogleLight/> : <GoogleDark/>}>Sign
+                        up
                         with Google</AuthButton>
                 </View>
-                <View className='flex-row w-full items-center px-5 mt-3 opacity-35'>
+                <View
+                    className='flex-row w-full items-center px-5 mt-3 opacity-35'>
                     <Text
                         className={`${isDarkMode ? 'text-body-secondary-light' : 'text-body-secondary-dark'} text-center`}>
-                        By joining, i declare that i have read and accent the Terms and
+                        By joining, i declare that i have read and accent the
+                        Terms and
                         Privacy Policy
                     </Text>
                 </View>

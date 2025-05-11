@@ -1,15 +1,24 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Redirect} from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Index() {
-    const [isAuthUser, setIsAuthUser] = useState(true)
+    const [isAuthUser, setIsAuthUser] = useState(false)
 
-    if (!isAuthUser)
-        return <Redirect href='/onboarding/welcome' />
-    if(isAuthUser)
-        return <Redirect href='/(tabs)/book' />
+    useEffect(() => {
+        const getUserToken = async () => {
+            const userToken = await AsyncStorage.getItem('token');
+            if (!userToken) {
+                setIsAuthUser(false)
+            } else {
+                setIsAuthUser(true)
+            }
+        }
+        getUserToken()
+    }, []);
 
-    return (
-        <></>
-    );
+    if (!isAuthUser) {
+        return <Redirect href='/onboarding/welcome'/>
+    } else return <Redirect href='/(tabs)/book'/>
+
 }
