@@ -1135,7 +1135,7 @@ export function SuccessIcon({fill, ...props}: { fill?: string, props?: any }) {
     )
 }
 
-export function MistakeIcon(props) {
+export function MistakeIcon({fill, ...props}: { fill?: string, props?: any }) {
     return (
         <Svg
             width={25}
@@ -1149,19 +1149,19 @@ export function MistakeIcon(props) {
                 fillRule="evenodd"
                 clipRule="evenodd"
                 d="M12.5 3a9 9 0 100 18 9 9 0 000-18zm-11 9c0-6.075 4.925-11 11-11s11 4.925 11 11-4.925 11-11 11-11-4.925-11-11z"
-                fill="#fff"
+                fill={fill ? fill : "#fff"}
             />
             <Path
                 fillRule="evenodd"
                 clipRule="evenodd"
                 d="M15.333 8.617a1 1 0 010 1.414l-4.792 4.792a1 1 0 11-1.414-1.414l4.792-4.792a1 1 0 011.414 0z"
-                fill="#fff"
+                fill={fill ? fill : "#fff"}
             />
             <Path
                 fillRule="evenodd"
                 clipRule="evenodd"
                 d="M9.124 8.614a1 1 0 011.414 0l4.796 4.797a1 1 0 11-1.414 1.414l-4.796-4.797a1 1 0 010-1.414z"
-                fill="#fff"
+                fill={fill ? fill : "#fff"}
             />
         </Svg>
     )

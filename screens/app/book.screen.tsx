@@ -75,7 +75,6 @@ const BookScreen = () => {
                                       title='Try Premium For Free'
                                       bgIcon={<DiscountIcon/>}
                         />
-
                     </View>
 
                     <View className='mt-7 gap-4'>
