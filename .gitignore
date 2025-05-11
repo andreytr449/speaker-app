@@ -38,5 +38,7 @@ yarn-error.*
 app-example
 
 .env
+/config/env.ts
+
 
 package-lock.json

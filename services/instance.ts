@@ -1,7 +1,6 @@
 import axios from "axios";
-
-console.log('BASE URL:')
+import {BACKEND_URL} from "@/config/env";
 
 export const axiosInstance = axios.create({
-    baseURL: 'http://192.168.31.134:5500/api/v1'
+    baseURL: BACKEND_URL
 })

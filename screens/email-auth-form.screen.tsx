@@ -12,6 +12,7 @@ import useAuthStore from "@/store/auth";
 import {validateEmail, validatePassword} from "@/lib/form-checker";
 import {API} from "@/services/api";
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type formType = {
     emailError: undefined | string,
@@ -21,7 +22,9 @@ type formType = {
 
 type res = {
     success: boolean
-    token: string
+    data: {
+        token: string
+    }
 }
 
 const EmailAuthFormScreen = () => {
@@ -29,7 +32,6 @@ const EmailAuthFormScreen = () => {
     const {isLogin} = useAuthStore()
     const [email, setEmail] = useState('');
     const [isLoading, setReqIsLoading] = useState(false)
-    const [isReqError, setReqIsError] = useState(false)
     const [password, setPassword] = useState('');
     const [isError, setIsError] = useState<formType>({
         emailError: undefined,
@@ -42,14 +44,13 @@ const EmailAuthFormScreen = () => {
         return <Redirect href='/onboarding/welcome'/>
 
     const handlePress = async () => {
-        if(isLoading) return
+        if (isLoading) return
 
         setIsError({
             emailError: undefined,
             passwordError: undefined,
             reqError: undefined
         })
-        setReqIsError(false)
         setReqIsLoading(false)
         if (isLogin) {
             const emailError = validateEmail(email);
@@ -66,8 +67,11 @@ const EmailAuthFormScreen = () => {
             }
             try {
                 setReqIsLoading(true);
-                const res: res = await API.auth.signIn(email, password);
-                console.log(res)
+                const response: res = await API.auth.signIn(email, password);
+                if (response.success) {
+                    await AsyncStorage.setItem('token', response.data.token);
+                    router.navigate('/(tabs)/book')
+                }else throw new Error()
             } catch (e) {
                 if (axios.isAxiosError(e)) {
                     const errorData = e.response?.data;
@@ -76,14 +80,10 @@ const EmailAuthFormScreen = () => {
                         passwordError,
                         reqError: errorData?.error || 'Something went wrong'
                     });
-                    console.log('errorData:',errorData)
                 }
-                setReqIsError(true);
             } finally {
                 setReqIsLoading(false);
             }
-
-
         } else {
             router.push('/auth/create-username')
         }
@@ -117,10 +117,12 @@ const EmailAuthFormScreen = () => {
                     }
                 </View>
                 <View className='w-full px-1 py-2'>
-                    <Button onPress={handlePress}>{isLoading ? 'Loading...' :  'Continue'}</Button>
+                    <Button
+                        onPress={handlePress}>{isLoading ? 'Loading...' : 'Continue'}</Button>
                 </View>
                 <View className='justify-center items-center'>
-                    <Text className={`mb-2 font-light text-body-small text-red`}>{isError.reqError}</Text>
+                    <Text
+                        className={`mb-2 font-light text-body-small text-red`}>{isError.reqError}</Text>
                 </View>
                 <View className='flex-row w-full items-center px-5'>
                     <View className={`flex-1  h-[2px]`}
