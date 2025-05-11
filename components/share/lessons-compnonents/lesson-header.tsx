@@ -1,7 +1,8 @@
 import React from 'react';
-import {Text, View} from "react-native";
+import {View} from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import {router} from "expo-router";
 
 
 const LessonHeader = ({isDarkMode, progressNumber}: {
@@ -11,7 +12,7 @@ const LessonHeader = ({isDarkMode, progressNumber}: {
     return (
         <>
             <View className='flex-row justify-between items-center gap-3 mt-5 pb-3'>
-                <AntDesign name="close" size={24}
+                <AntDesign name="close" size={24} onPress={() => router.push('/(tabs)/book')}
                            color={isDarkMode ? "white" : "black"}/>
 
                 <View className="relative flex-1 h-4">

@@ -35,6 +35,7 @@
     "expo-status-bar": "~2.2.3",
     "expo-symbols": "~0.4.4",
     "expo-system-ui": "~5.0.7",
+    "expo-video": "~2.1.8",
     "expo-web-browser": "~14.1.6",
     "lightningcss-win32-x64-msvc": "^1.29.3",
     "nativewind": "^4.1.23",
