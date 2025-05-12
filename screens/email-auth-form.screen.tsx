@@ -13,6 +13,7 @@ import {validateEmail, validatePassword} from "@/lib/form-checker";
 import {API} from "@/services/api";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {User} from "@/types/user.types";
 
 type formType = {
     emailError: undefined | string,
@@ -24,6 +25,7 @@ type res = {
     success: boolean
     data: {
         token: string
+        user: User
     }
 }
 
@@ -70,8 +72,14 @@ const EmailAuthFormScreen = () => {
                 const response: res = await API.auth.signIn(email, password);
                 if (response.success) {
                     await AsyncStorage.setItem('token', response.data.token);
-                    router.navigate('/(tabs)/book')
-                }else throw new Error()
+                    const user = response.data.user;
+                    console.log(user.isVerified)
+                    if (user.isVerified) {
+                        router.navigate('/(tabs)/book')
+                    } else {
+                        router.navigate('/auth/confirmation-code')
+                    }
+                } else throw new Error()
             } catch (e) {
                 if (axios.isAxiosError(e)) {
                     const errorData = e.response?.data;

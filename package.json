@@ -44,6 +44,7 @@
     "react-dom": "19.0.0",
     "react-native": "0.79.2",
     "react-native-circular-progress": "^1.4.1",
+    "react-native-confirmation-code-field": "^7.4.0",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
