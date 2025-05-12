@@ -8,6 +8,10 @@ import {
 } from 'react-native-confirmation-code-field';
 import useTheme from '@/store/theme';
 import Button from "@/components/ui/button";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {router} from "expo-router";
+import {API} from "@/services/api";
+import axios from "axios";
 
 const CELL_COUNT = 4;
 
@@ -16,11 +20,15 @@ const ConfirmationCode = () => {
     const [value, setValue] = useState('');
     const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
     const [timeLeft, setTimeLeft] = useState(180);
+    const [isLoading, setIsLoading] = useState(false)
+    const [errorMsg, setErrorMsg] = useState('')
     const [props, getCellOnLayoutHandler] = useClearByFocusCell({
         value,
         setValue
     });
-    console.log(value)
+
+    const buttonBgColor = errorMsg ? 'bg-red' : value.length === 4 ? 'bg-primary' : 'bg-neutral'
+
     useEffect(() => {
         if (timeLeft === 0) return;
 
@@ -30,6 +38,41 @@ const ConfirmationCode = () => {
 
         return () => clearInterval(timerId);
     }, [timeLeft]);
+
+    const handlePress = async () => {
+        console.log('TAP')
+        if (value.length < 4) return;
+        setErrorMsg('')
+        setIsLoading(false)
+        try {
+            setIsLoading(true);
+            const code = Number(value);
+            if (isNaN(code)) {
+                setErrorMsg('Enter valid code');
+                return;
+            }
+            const token = await AsyncStorage.getItem('token')
+            console.log(token)
+            if (!token) {
+                router.replace('/auth/sign-in')
+                return;
+            }
+            const resp = await API.auth.verifyEmail(code, token!)
+            if (resp.success)
+                router.replace('/(tabs)/book')
+            else
+                throw new Error()
+            setIsLoading(false);
+        } catch (e) {
+            if (axios.isAxiosError(e)) {
+                const errorData = e.response?.data;
+                setErrorMsg(errorData?.error || 'Something went wrong')
+            }
+            setErrorMsg(prevState => prevState ? prevState : 'Something went wrong')
+        } finally {
+            setIsLoading(false);
+        }
+    }
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -88,9 +131,16 @@ const ConfirmationCode = () => {
                             {`${Math.floor(timeLeft / 60)}:${(timeLeft % 60).toString().padStart(2, '0')}`}</Text>
                     </View>
                 </View>
-                <View className='w-full'>
-                    <Button fullCustomClassName={`${value.length === 4 ? 'bg-primary' : 'bg-neutral'} mx-4 justify-center items-center py-3 rounded-[12px]`}>Confirm</Button>
+                <View className='w-full items-center gap-3'>
+
+                    <View className='w-full'>
+                        <Button onPress={handlePress}
+                                fullCustomClassName={`${buttonBgColor} mx-4 justify-center items-center py-3 rounded-[12px]`}>{isLoading ? 'Loading...' : 'Confirm'}</Button>
+                    </View>
+                    <Text
+                        className='text-red text-center text-title-large font-extralight'>{errorMsg}</Text>
                 </View>
+
             </View>
         </TouchableWithoutFeedback>
     );

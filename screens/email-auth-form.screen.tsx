@@ -73,7 +73,6 @@ const EmailAuthFormScreen = () => {
                 if (response.success) {
                     await AsyncStorage.setItem('token', response.data.token);
                     const user = response.data.user;
-                    console.log(user.isVerified)
                     if (user.isVerified) {
                         router.navigate('/(tabs)/book')
                     } else {
