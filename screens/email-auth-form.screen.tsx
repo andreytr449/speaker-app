@@ -29,9 +29,15 @@ type res = {
     }
 }
 
+type singUpResp = {
+    success: boolean
+    isVerified: boolean
+    isUserExist: boolean
+}
+
 const EmailAuthFormScreen = () => {
     const {isDarkMode} = useTheme()
-    const {isLogin} = useAuthStore()
+    const {isLogin, setEmail :setEmailToLocalStore} = useAuthStore()
     const [email, setEmail] = useState('');
     const [isLoading, setReqIsLoading] = useState(false)
     const [password, setPassword] = useState('');
@@ -41,6 +47,7 @@ const EmailAuthFormScreen = () => {
         reqError: undefined
     });
 
+    const buttonClassName = isError.reqError ? 'bg-red' : 'bg-primary'
 
     if (isLogin === undefined)
         return <Redirect href='/onboarding/welcome'/>
@@ -92,7 +99,37 @@ const EmailAuthFormScreen = () => {
                 setReqIsLoading(false);
             }
         } else {
-            router.push('/auth/create-username')
+            const emailError = validateEmail(email);
+            setIsError({
+                emailError,
+                passwordError: undefined,
+                reqError: undefined
+            });
+            if (emailError) {
+                return;
+            }
+            try {
+                const resp: {
+                    data: singUpResp
+                } = await API.auth.checkIsEmailExists(email)
+                if (resp.data.isVerified) {
+                    setIsError({
+                        emailError: undefined,
+                        passwordError: undefined,
+                        reqError: 'This email already taken, please sign in'
+                    });
+                } else {
+                    setEmailToLocalStore(email)
+                    router.replace('/auth/create-username')
+                }
+            } catch (e) {
+                console.log(e)
+                setIsError({
+                    emailError: undefined,
+                    passwordError: undefined,
+                    reqError: 'Something went wrong'
+                });
+            }
         }
     }
 
@@ -125,6 +162,7 @@ const EmailAuthFormScreen = () => {
                 </View>
                 <View className='w-full px-1 py-2'>
                     <Button
+                        fullCustomClassName={`${buttonClassName} mx-4 justify-center items-center py-3 rounded-[12px]`}
                         onPress={handlePress}>{isLoading ? 'Loading...' : 'Continue'}</Button>
                 </View>
                 <View className='justify-center items-center'>

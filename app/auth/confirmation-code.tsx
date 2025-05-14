@@ -59,7 +59,7 @@ const ConfirmationCode = () => {
             }
             const resp = await API.auth.verifyEmail(code, token!)
             if (resp.success)
-                router.replace('/(tabs)/book')
+                router.replace('/auth/select-language')
             else
                 throw new Error()
             setIsLoading(false);
@@ -138,7 +138,7 @@ const ConfirmationCode = () => {
                                 fullCustomClassName={`${buttonBgColor} mx-4 justify-center items-center py-3 rounded-[12px]`}>{isLoading ? 'Loading...' : 'Confirm'}</Button>
                     </View>
                     <Text
-                        className='text-red text-center text-title-large font-extralight'>{errorMsg}</Text>
+                        className='text-red text-center text-title-xs font-extralight'>{errorMsg}</Text>
                 </View>
 
             </View>
