@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {SafeAreaView, ScrollView, View, Switch, Text} from "react-native";
+import {
+    SafeAreaView,
+    ScrollView,
+    View,
+    Text,
+    Pressable
+} from "react-native";
 import useTheme from "@/store/theme";
 import SettingsHeaderComponent from "@/components/share/settings-header";
 import SettingsList from "@/components/share/settings-list";
@@ -8,12 +14,19 @@ import Button from "@/components/ui/button";
 import OffersButton from "@/components/share/offers-button";
 import {DiscountIcon} from "@/assets/icons/icons";
 import SwitcherButton from "@/components/share/switcher-button";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {router} from "expo-router";
 
 
 const SettingsScreen = () => {
     const {isDarkMode, toggleTheme} = useTheme();
     const [isSendNotification, setIsSendNotification] = useState(true);
     const toggleSwitch = () => setIsSendNotification(previousState => !previousState);
+
+    const logOutHandler = async () => {
+        await AsyncStorage.removeItem('token');
+        router.replace('/auth/sign-in')
+    }
 
     return (
         <SafeAreaView className={
@@ -56,10 +69,11 @@ const SettingsScreen = () => {
                     {name: 'Support', type: 'text', value: 'Contact us'},
                 ]}/>
 
-                <View className='flex justify-start items-start my-2 px-5'>
+                <Pressable onPress={logOutHandler}
+                           className='flex justify-start items-start my-2 px-5'>
                     <Text
                         className={`text-red text-title-small`}>Log out</Text>
-                </View>
+                </Pressable>
             </ScrollView>
         </SafeAreaView>
     );

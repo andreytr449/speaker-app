@@ -28,14 +28,11 @@ export default function RootLayout() {
     useEffect(() => {
         async function prepare() {
             const userTheme = await AsyncStorage.getItem('appTheme');
-            console.log(userTheme)
             if (!userTheme) {
-                console.log('NO USER THEME :(')
                 const theme = colorScheme === 'dark' ? 'dark' : 'light'
                 await AsyncStorage.setItem('appTheme', theme);
                 toggleTheme(theme);
             } else {
-                console.log('YES USER THEME :)')
                 toggleTheme(userTheme as 'dark' | 'light');
             }
         }
