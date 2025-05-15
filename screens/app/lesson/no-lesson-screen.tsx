@@ -17,7 +17,7 @@ const NoLessonScreen = () => {
               flexGrow: 1,
               justifyContent: 'center',
               alignItems: 'center',
-              gap: 20, // якщо хочеш відстань між елементами
+              gap: 20,
               padding: 16
           }}
 			    showsVerticalScrollIndicator={false}

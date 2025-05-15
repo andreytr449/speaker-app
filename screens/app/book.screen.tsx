@@ -1,4 +1,4 @@
-import React, {useMemo, useRef} from 'react';
+import React, { useMemo, useRef} from 'react';
 import useTheme from "@/store/theme";
 import {
     Pressable,
@@ -11,7 +11,7 @@ import BookHeader from "@/components/share/book-header";
 import OnBoardingTitle from "@/components/share/on-boarding-title";
 import UserProgress from "@/components/share/user-progress";
 import {DiscountIcon, MarkIcon} from "@/assets/icons/icons";
-import Chapter from "@/components/share/chapter";
+import {Chapter} from "@/types/chapter.types";
 import OffersButton from "@/components/share/offers-button";
 import BottomSheet from "@gorhom/bottom-sheet";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
@@ -21,6 +21,19 @@ import useCurrentChapterItem from "@/store/selected-chapter";
 import ShimmerButton from "@/components/share/shimmer-button";
 import InstaStories from "@/components/share/insta-stories";
 import AiMessageBottomSheet from "@/components/share/ai-message-bottom-sheet";
+import ChaptersList from "@/components/share/chapters-list";
+
+
+export interface GetChaptersResponse {
+    success: boolean;
+    data:  Chapter[];
+    pagination: {
+        total: number;
+        page: number;
+        pages: number;
+    };
+}
+
 
 const BookScreen = () => {
     const {isDarkMode} = useTheme()
@@ -48,7 +61,6 @@ const BookScreen = () => {
     const handleOpenAISheet = () => {
         aiBottomSheetRef.current?.expand();
     };
-
     return (
         <GestureHandlerRootView className='flex-1'>
             <SafeAreaView
@@ -76,19 +88,12 @@ const BookScreen = () => {
                                       bgIcon={<DiscountIcon/>}
                         />
                     </View>
-
                     <View className='mt-7 gap-4'>
                         <Text
                             className={`${isDarkMode ? 'text-bg-light' : 'text-bg-dark'} text-title-medium`}>Your Stories ❤️</Text>
                         <InstaStories isDarkMode={isDarkMode}/>
                     </View>
-
-                    <Chapter chapterTitle='Chapter - 1' chapterName='Traveling'
-                             onCardPress={handleOpenSheet}/>
-                    <Chapter chapterTitle='Chapter - 2' chapterName='Friendship'
-                             onCardPress={handleOpenSheet}
-                             isLock={true}/>
-
+                    <ChaptersList handleOpenSheet={handleOpenSheet} />
                 </ScrollView>
 
                 <ChapterCardBottomSheet bottomSheetRef={bottomSheetRef}
