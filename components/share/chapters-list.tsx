@@ -3,14 +3,15 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {router} from "expo-router";
 import {API} from "@/services/api";
 import {GetChaptersResponse} from "@/screens/app/book.screen";
-import {View, Text} from "react-native";
 import {Chapter as ChapterType} from "@/types/chapter.types";
 import Chapter from "@/components/share/chapter";
+import Error from "@/components/share/error";
+import ChapterLoading from "@/components/share/chapter-loading";
 
 const ChaptersList = ({handleOpenSheet}: { handleOpenSheet: () => void }) => {
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
-    const [chapters, setChapters] = useState<typeof ChapterType[]>([])
+    const [chapters, setChapters] = useState<ChapterType[]>([])
 
 
     useEffect(() => {
@@ -22,7 +23,6 @@ const ChaptersList = ({handleOpenSheet}: { handleOpenSheet: () => void }) => {
                     router.replace('/auth/sign-in')
                 const resp: GetChaptersResponse = await API.chapter.getChapters(token!)
                 setChapters(resp.data)
-                setIsLoading(false)
             } catch (e) {
                 setIsError(true)
             } finally {
@@ -33,12 +33,12 @@ const ChaptersList = ({handleOpenSheet}: { handleOpenSheet: () => void }) => {
     }, []);
 
     if (isLoading)
-        return <Text className='text-bg-light'>Loading...</Text>;
+        return <ChapterLoading />
 
     if (isError)
-        return <Text>Error</Text>;
+        return <Error />
     return (
-        chapters.length > 0 ?
+        chapters.length > 0 &&
             chapters.map((chapter) => {
                 return (
                     <Chapter
@@ -50,8 +50,7 @@ const ChaptersList = ({handleOpenSheet}: { handleOpenSheet: () => void }) => {
                     />
                 );
             })
-            :
-            <View><Text>123</Text></View>
+
     );
 
 };

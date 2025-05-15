@@ -11,7 +11,7 @@ import BookHeader from "@/components/share/book-header";
 import OnBoardingTitle from "@/components/share/on-boarding-title";
 import UserProgress from "@/components/share/user-progress";
 import {DiscountIcon, MarkIcon} from "@/assets/icons/icons";
-import Chapter from "@/components/share/chapter";
+import {Chapter} from "@/types/chapter.types";
 import OffersButton from "@/components/share/offers-button";
 import BottomSheet from "@gorhom/bottom-sheet";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
@@ -26,7 +26,7 @@ import ChaptersList from "@/components/share/chapters-list";
 
 export interface GetChaptersResponse {
     success: boolean;
-    data: typeof Chapter[];
+    data:  Chapter[];
     pagination: {
         total: number;
         page: number;

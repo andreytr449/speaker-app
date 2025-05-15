@@ -14,7 +14,7 @@ import NoLessonScreen from "@/screens/app/lesson/no-lesson-screen";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {API} from "@/services/api";
 import Loading from "@/components/share/loading";
-import Error from "@/components/error";
+import Error from "@/components/share/error";
 
 export type selectedAnswer = {
     question: string;
