@@ -42,28 +42,6 @@ export const dummyLanguagesLevel = [
 
 export const minutesVariants = [3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 80];
 
-export const chapterDummyData = [
-    {
-        imgUri: 'https://images.theconversation.com/files/578175/original/file-20240227-28-cejldv.jpg?ixlib=rb-4.1.0&rect=0%2C0%2C7668%2C3828&q=45&auto=format&w=1356&h=668&fit=crop',
-        title: "🗺️ We're going on vocation",
-        id: "lesson-1"
-    },
-    {
-        imgUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOGFxfRXqtg5aKF4y2wDaLgVgO69jRyC2xlw&s',
-        title: "✈️ Description of travel experiences",
-        id: "lesson-2"
-    },
-    {
-        imgUri: 'https://lh3.googleusercontent.com/proxy/HC1jfDcJNLCJzEE4g_wCeQsVuxqNtvKQKToLIllcb_qXnfBM7bnfrPhvTdapnislGxh0eKcbeWGmZQAq1zLYVOOYWioSA1w8UUhRJXqb9eBPg4oHKSpR-s-JLFiGqJjcyf2Tj-OT-KOzQpvH',
-        title: "🏆 Discussing types of vocation",
-        id: "lesson-3"
-    },
-    {
-        imgUri: 'https://st2.depositphotos.com/2309453/8331/i/950/depositphotos_83313510-stock-photo-office-people-discussing-document-in.jpg',
-        title: "✍️ Developing speaking and writing skills",
-        id: "lesson-4"
-    },
-]
 
 export const lessonData = [
     {
