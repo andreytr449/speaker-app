@@ -4,7 +4,7 @@ import useTheme from "@/store/theme";
 import OnBoardingTitle from "@/components/share/on-boarding-title";
 import DailyTimePicker from "@/components/share/daily-time-picker";
 import Button from "@/components/ui/button";
-import {minutesVariants} from "@/constans";
+import {minutesVariants} from "../constants";
 import {router} from "expo-router";
 
 

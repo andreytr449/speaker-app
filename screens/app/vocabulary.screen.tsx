@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, Pressable, SafeAreaView, ScrollView, Text, View} from "react-native";
 import useTheme from "@/store/theme";
-import {infoCardsDummyData, vocabularyDummyData} from "@/constans";
+import {infoCardsDummyData, vocabularyDummyData} from "../../constants";
 import OnBoardingTitle from "@/components/share/on-boarding-title";
 import SmallButton from "@/components/ui/small-button";
 import {DiscountIcon, MarkIcon, SearchIcon} from "@/assets/icons/icons";

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View} from "react-native";
-import {todayTaskType} from "@/constans";
+import {todayTaskType} from "../../constants";
 import useTheme from "@/store/theme";
 import {
     AnswerIcon,

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BackHandler, FlatList, View } from 'react-native';
 import useTheme from '@/store/theme';
 import Button from '@/components/ui/button';
-import { availableLanguages } from '@/constans';
+import { availableLanguages } from '../constants';
 import LanguageCard from '@/components/share/language-card';
 import OnBoardingTitle from '@/components/share/on-boarding-title';
 import { router } from 'expo-router';

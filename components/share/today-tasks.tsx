@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, Text, View} from "react-native";
 import useTheme from "@/store/theme";
-import {dummyTodayTasks} from "@/constans";
+import {dummyTodayTasks} from "../../constants";
 import TodayTaskBox from "@/components/share/today-task-box";
 
 const TodayTasks = () => {
