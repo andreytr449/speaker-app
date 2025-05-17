@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, Text, View} from "react-native";
 import useTheme from "@/store/theme";
-import {DailyQuestion} from "@/constans";
+import {DailyQuestion} from "../../constants";
 import Button from "@/components/ui/button";
 import Entypo from '@expo/vector-icons/Entypo';
 import AudioPlayer from "@/components/share/audio-player";

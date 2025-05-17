@@ -3,7 +3,7 @@ import {Text, View} from "react-native";
 import {AnimatedCircularProgress} from "react-native-circular-progress";
 import {CertificateIcon, ProgressChartIcon, UKFlag} from "@/assets/icons/icons";
 import InfoCard from "@/components/share/info-card";
-import {UserProgressType} from "@/constans";
+import {UserProgressType} from "../../constants";
 
 interface UserProgressCircleProps extends UserProgressType{
     isDarkMode:boolean

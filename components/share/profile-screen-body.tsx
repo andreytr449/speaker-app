@@ -5,7 +5,7 @@ import UserProgressCircle from "@/components/share/user-progress-circle";
 import TabChatItem from "@/components/share/tab-chat-item";
 import UserStreak from "@/components/share/user-streak";
 import UserRating from "@/components/share/user-rating";
-import {dummyUserProgress} from "@/constans";
+import {dummyUserProgress} from "../../constants";
 import OffersButton from "@/components/share/offers-button";
 import {DiscountIcon} from "@/assets/icons/icons";
 import Button from "@/components/ui/button";

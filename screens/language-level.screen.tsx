@@ -9,7 +9,7 @@ import {
 import Button from '@/components/ui/button';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
-import {dummyLanguagesLevel} from "@/constans";
+import {dummyLanguagesLevel} from "../constants";
 import LanguageLevelCard from "@/components/share/language-level-card";
 import * as WebBrowser from 'expo-web-browser';
 import {router} from "expo-router";

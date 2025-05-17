@@ -9,7 +9,7 @@ import {
 import TodayTasks from '@/components/share/today-tasks';
 import useTheme from '@/store/theme';
 import QuestionCard from "@/components/share/question-card";
-import {dummyQuestions} from "@/constans";
+import {dummyQuestions} from "../../../constants";
 
 type Props = {
     onScroll: (e: NativeSyntheticEvent<NativeScrollEvent>) => void;
