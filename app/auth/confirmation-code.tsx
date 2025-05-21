@@ -40,7 +40,6 @@ const ConfirmationCode = () => {
     }, [timeLeft]);
 
     const handlePress = async () => {
-        console.log('TAP')
         if (value.length < 4) return;
         setErrorMsg('')
         setIsLoading(false)

@@ -6,11 +6,32 @@ import DailyTimePicker from "@/components/share/daily-time-picker";
 import Button from "@/components/ui/button";
 import {minutesVariants} from "../constants";
 import {router} from "expo-router";
+import * as Notifications from "expo-notifications";
 
+
+Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+        shouldShowBanner: true,
+        shouldShowList: true,
+        shouldPlaySound: true,
+        shouldSetBadge: false,
+    }),
+});
 
 const SelectDailyTimeScreen = () => {
     const {isDarkMode} = useTheme();
     const [activeIndex, setActiveIndex] = useState(1);
+
+    const handlePress = () => {
+        Notifications.scheduleNotificationAsync({
+            content: {
+                title: 'Welcome to Speaker!',
+                body: "Thanks for starting your English journey with us. Let’s get speaking! 🎉",
+            },
+            trigger: null,
+        });
+        router.replace('/(tabs)/book')
+    }
 
     return (
         <View
@@ -28,7 +49,7 @@ const SelectDailyTimeScreen = () => {
                 <DailyTimePicker DATA={minutesVariants} setActiveIndex={setActiveIndex}/>
             </View>
             <View style={{marginBottom: 15}}>
-                <Button onPress={() => router.replace('/(tabs)/book')}>Continue (<Text className='font-semibold'>{minutesVariants[activeIndex]}</Text> min/day)</Button>
+                <Button onPress={handlePress}>Continue (<Text className='font-semibold'>{minutesVariants[activeIndex]}</Text> min/day)</Button>
             </View>
         </View>
     );

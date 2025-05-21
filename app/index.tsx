@@ -4,10 +4,17 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {View, ActivityIndicator} from "react-native";
 import {API} from "@/services/api";
 import {User} from "@/types/user.types";
+import * as Notifications from "expo-notifications";
 
 export default function Index() {
     const [isAuthUser, setIsAuthUser] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        (async () => {
+            await Notifications.requestPermissionsAsync();
+        })();
+    }, []);
 
     useEffect(() => {
         const getUserToken = async () => {
