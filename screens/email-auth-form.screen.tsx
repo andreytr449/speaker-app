@@ -37,7 +37,7 @@ type singUpResp = {
 
 const EmailAuthFormScreen = () => {
     const {isDarkMode} = useTheme()
-    const {isLogin, setEmail :setEmailToLocalStore} = useAuthStore()
+    const {isLogin, setEmail: setEmailToLocalStore} = useAuthStore()
     const [email, setEmail] = useState('');
     const [isLoading, setReqIsLoading] = useState(false)
     const [password, setPassword] = useState('');
@@ -124,6 +124,14 @@ const EmailAuthFormScreen = () => {
                 }
             } catch (e) {
                 console.log(e)
+
+                if (axios.isAxiosError(e)) {
+                    console.log('❗️Axios Error Message:', e.message);
+                    console.log('❗️Axios Response Data:', e.response?.data);
+                    console.log('❗️Axios Response Status:', e.response?.status);
+                    console.log('❗️Axios Response Headers:', e.response?.headers);
+                }
+
                 setIsError({
                     emailError: undefined,
                     passwordError: undefined,
@@ -146,7 +154,11 @@ const EmailAuthFormScreen = () => {
                             : 'Sign up and start learning any language'}
                     </Text>
                     <Input label="Email"
+                           keyboardType='email-address'
+                           textContentType='emailAddress'
                            error={isError.emailError}
+                           autoCapitalize='none'
+                           autoCorrect={false}
                            placeholder="user@gmail.com"
                            value={email}
                            onChangeText={setEmail}
